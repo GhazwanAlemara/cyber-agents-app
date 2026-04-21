@@ -21,13 +21,17 @@ function App() {
 
   const handleLogin = async () => {
     try {
+      console.log("Attempting GitHub login...");
       await signInWithPopup(auth, githubProvider);
+      console.log("Login successful");
     } catch (error: any) {
-      console.error("Login failed", error);
-      if (error.code === 'auth/operation-not-allowed') {
-        alert("GitHub login is not enabled in the Firebase Console yet. Please go to Firebase Authentication -> Sign-in Method and enable GitHub.");
+      console.error("Login failed:", error);
+      
+      // Detailed error for common configuration issue
+      if (error.code === 'auth/configuration-not-found') {
+        alert("CRITICAL ERROR: GitHub Authentication is NOT yet fully configured in your Firebase Console.\n\nTo fix this:\n1. Go to Firebase Console -> Authentication -> Sign-in Method.\n2. Enable 'GitHub'.\n3. Copy the Client ID and Secret from your GitHub OAuth App.\n4. Ensure 'cyberagents.app' is in the 'Authorized Domains' list.");
       } else {
-        alert("Login failed: " + error.message);
+        alert(`Login failed: [${error.code}] ${error.message}`);
       }
     }
   };
