@@ -43,22 +43,22 @@ button {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  padding-top: 150px; /* Offset for fixed navbar */
+  padding-top: 130px; /* Space for the fixed navbar */
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0.5rem 2rem;
   background-color: #ffffff;
   border-bottom: 1px solid var(--border);
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: fixed !important; /* Aggressively stationary */
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  z-index: 9999 !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .logo {
@@ -67,7 +67,7 @@ button {
 }
 
 .brand-logo {
-  height: 180px; /* Massively increased to 180px */
+  height: 120px; /* Reverted to 120px as requested */
   width: auto;
   object-fit: contain;
   transition: transform 0.2s;

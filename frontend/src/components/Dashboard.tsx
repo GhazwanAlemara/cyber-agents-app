@@ -119,7 +119,7 @@ function Dashboard({ user }: DashboardProps) {
         </div>
         <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
           <img src="https://img.shields.io/badge/Secured%20by-CyberAgents-3b82f6?style=for-the-badge" alt="Security Badge" />
-          <button className="btn-primary" onClick={() => window.open('https://github.com/apps/cyberagents-app/installations/new', '_blank')}>Connect New Repo</button>
+          <button className="btn-primary" onClick={() => window.open('https://github.com/apps/cyber-agents-app/installations/new', '_blank')}>Connect New Repo</button>
         </div>
       </div>
 
