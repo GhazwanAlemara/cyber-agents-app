@@ -15,18 +15,22 @@ async function checkUrl(url) {
 async function runTests() {
   console.log("Running platform link health checks...");
   
-  const githubAppUrl = "https://github.com/apps/cyber-agents-app/installations/new";
+  const githubAppUrls = [
+    "https://github.com/apps/cyberagents-app/installations/new",
+    "https://github.com/apps/cyber-agents-app/installations/new"
+  ];
   const webAppUrl = "https://cyberagents.app";
   
-  const githubStatus = await checkUrl(githubAppUrl);
-  const webStatus = await checkUrl(webAppUrl);
-
-  if (githubStatus === 404) {
-    console.error("❌ GitHub App URL is returning 404. Check the app slug in GitHub settings.");
-  } else if (githubStatus === 302 || githubStatus === 200) {
-    console.log("✅ GitHub App URL is valid.");
+  for (const url of githubAppUrls) {
+    const status = await checkUrl(url);
+    if (status === 200 || status === 302) {
+      console.log(`✅ GitHub App URL is valid: ${url}`);
+    } else {
+      console.log(`❌ GitHub App URL failed (Status ${status}): ${url}`);
+    }
   }
 
+  const webStatus = await checkUrl(webAppUrl);
   if (webStatus === 200) {
     console.log("✅ Main website is live.");
   }

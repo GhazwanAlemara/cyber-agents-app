@@ -16,6 +16,8 @@ interface Activity {
   timestamp: Date;
 }
 
+const GITHUB_APP_SLUG = "cyberagents-app"; // Update this to match your GitHub App's "Public Link" slug
+
 function Dashboard({ user }: DashboardProps) {
   const [stats, setStats] = useState({
     reposScanned: 0,
@@ -27,21 +29,16 @@ function Dashboard({ user }: DashboardProps) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // We are setting up a real listener to the 'threat_intel' and 'github_events' collections
-    // If the database is empty, it will naturally show 0 and no activities, but it's 100% real.
-    
     let unsubscribeIntel = () => {};
     let unsubscribeEvents = () => {};
 
     const loadData = async () => {
       try {
-        // Listen to threat intel for this user
         const intelRef = collection(db, "threat_intel");
         const qIntel = query(intelRef, where("user_id", "==", user.uid), orderBy("timestamp", "desc"), limit(10));
         
         unsubscribeIntel = onSnapshot(qIntel, (snapshot) => {
           let attacksCount = snapshot.docs.length;
-          
           const newActivities: Activity[] = snapshot.docs.map(doc => {
             const data = doc.data();
             return {
@@ -53,16 +50,13 @@ function Dashboard({ user }: DashboardProps) {
               timestamp: data.timestamp?.toDate() || new Date()
             };
           });
-
           setActivities(prev => {
             const merged = [...newActivities, ...prev.filter(a => a.type !== 'intel')];
             return merged.sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime()).slice(0, 10);
           });
-
           setStats(prev => ({ ...prev, attacksBlocked: attacksCount }));
         });
 
-        // Listen to github events
         const eventsRef = collection(db, "github_events");
         const qEvents = query(eventsRef, orderBy("timestamp", "desc"), limit(10));
         
@@ -81,29 +75,21 @@ function Dashboard({ user }: DashboardProps) {
               timestamp: data.timestamp?.toDate() || new Date()
             };
           });
-
           setActivities(prev => {
             const merged = [...eventActivities, ...prev.filter(a => a.type !== 'event')];
             return merged.sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime()).slice(0, 10);
           });
-
-          setStats(prev => ({ 
-            ...prev, 
-            reposScanned: reposCount,
-            vulnerabilitiesFixed: fixesCount 
-          }));
+          setStats(prev => ({ ...prev, reposScanned: reposCount, vulnerabilitiesFixed: fixesCount }));
           setLoading(false);
         });
 
       } catch (error) {
         console.error("Error loading dashboard data:", error);
         setLoading(false);
-        // It might fail if indices are missing, so we catch it.
       }
     };
 
     loadData();
-
     return () => {
       unsubscribeIntel();
       unsubscribeEvents();
@@ -119,7 +105,7 @@ function Dashboard({ user }: DashboardProps) {
         </div>
         <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
           <img src="https://img.shields.io/badge/Secured%20by-CyberAgents-3b82f6?style=for-the-badge" alt="Security Badge" />
-          <button className="btn-primary" onClick={() => window.open('https://github.com/apps/cyber-agents-app/installations/new', '_blank')}>Connect New Repo</button>
+          <button className="btn-primary" onClick={() => window.open(`https://github.com/apps/${GITHUB_APP_SLUG}/installations/new`, '_blank')}>Connect New Repo</button>
         </div>
       </div>
 

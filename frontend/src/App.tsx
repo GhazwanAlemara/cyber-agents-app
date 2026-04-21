@@ -21,15 +21,11 @@ function App() {
 
   const handleLogin = async () => {
     try {
-      console.log("Attempting GitHub login...");
       await signInWithPopup(auth, githubProvider);
-      console.log("Login successful");
     } catch (error: any) {
       console.error("Login failed:", error);
-      
-      // Detailed error for common configuration issue
       if (error.code === 'auth/configuration-not-found') {
-        alert("CRITICAL ERROR: GitHub Authentication is NOT yet fully configured in your Firebase Console.\n\nTo fix this:\n1. Go to Firebase Console -> Authentication -> Sign-in Method.\n2. Enable 'GitHub'.\n3. Copy the Client ID and Secret from your GitHub OAuth App.\n4. Ensure 'cyberagents.app' is in the 'Authorized Domains' list.");
+        alert("CRITICAL ERROR: GitHub Authentication is NOT yet fully configured in your Firebase Console.");
       } else {
         alert(`Login failed: [${error.code}] ${error.message}`);
       }
@@ -50,7 +46,6 @@ function App() {
     return <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', color: 'var(--text-muted)' }}>Loading...</div>;
   }
 
-  // Determine what to render based on auth state and current view
   const renderContent = () => {
     if (user && currentView === 'home') {
       return <Dashboard user={user} />;
@@ -67,30 +62,75 @@ function App() {
     }
   };
 
+  const navbarStyle: React.CSSProperties = {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: '0 2rem',
+    height: '140px',
+    backgroundColor: '#ffffff',
+    borderBottom: '1px solid #334155',
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    width: '100%',
+    zIndex: 9999999,
+    boxShadow: '0 4px 20px rgba(0,0,0,0.15)'
+  };
+
+  const logoStyle: React.CSSProperties = {
+    display: 'flex',
+    alignItems: 'center',
+    height: '100%',
+    cursor: 'pointer'
+  };
+
+  const brandLogoStyle: React.CSSProperties = {
+    height: '120px',
+    width: 'auto',
+    objectFit: 'contain',
+    display: 'block'
+  };
+
+  const navLinksStyle: React.CSSProperties = {
+    display: 'flex',
+    gap: '1.5rem'
+  };
+
+  const navLinkStyle: React.CSSProperties = {
+    color: '#475569',
+    fontWeight: 600,
+    cursor: 'pointer',
+    textDecoration: 'none'
+  };
+
   return (
-    <div className="app-container">
-      <nav className="navbar">
-        <div className="logo" style={{ cursor: 'pointer' }} onClick={() => navigate('home')}>
-          <img src="/logo.png" alt="CyberAgents Logo" className="brand-logo" />
+    <div style={{ paddingTop: '140px' }}>
+      <header style={navbarStyle}>
+        <div style={logoStyle} onClick={() => navigate('home')}>
+          <img src="/logo.png" alt="CyberAgents Logo" style={brandLogoStyle} />
         </div>
-        <div className="nav-links">
-          <a onClick={() => navigate('home')}>Home</a>
-          <a onClick={() => navigate('docs')}>Docs</a>
-          <a onClick={() => navigate('pricing')}>Pricing</a>
+        <div style={navLinksStyle}>
+          <a style={navLinkStyle} onClick={() => navigate('home')}>Home</a>
+          <a style={navLinkStyle} onClick={() => navigate('docs')}>Docs</a>
+          <a style={navLinkStyle} onClick={() => navigate('pricing')}>Pricing</a>
         </div>
         <div>
           {user ? (
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-              <img src={user.photoURL || '/logo.png'} alt="Profile" style={{ width: '32px', height: '32px', borderRadius: '50%', border: '1px solid var(--border)' }} />
+              <img src={user.photoURL || '/logo.png'} alt="Profile" style={{ width: '32px', height: '32px', borderRadius: '50%', border: '1px solid #334155' }} />
               <button className="btn-secondary" onClick={handleLogout}>Logout</button>
             </div>
           ) : (
             <button className="btn-primary" onClick={handleLogin}>Login with GitHub</button>
           )}
         </div>
-      </nav>
+      </header>
 
-      {renderContent()}
+      <main className="app-container">
+        {renderContent()}
+      </main>
     </div>
   );
 }
