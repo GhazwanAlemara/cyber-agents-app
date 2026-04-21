@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react';
 import Landing from './components/Landing';
 import Dashboard from './components/Dashboard';
+import Docs from './components/Docs';
+import Pricing from './components/Pricing';
 import { auth, githubProvider } from './firebase';
 import { signInWithPopup, onAuthStateChanged, signOut, type User } from 'firebase/auth';
 
 function App() {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
+  const [currentView, setCurrentView] = useState<'home' | 'docs' | 'pricing'>('home');
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -31,22 +34,45 @@ function App() {
 
   const handleLogout = async () => {
     await signOut(auth);
+    setCurrentView('home');
+  };
+
+  const navigate = (view: 'home' | 'docs' | 'pricing') => {
+    setCurrentView(view);
+    window.scrollTo(0, 0);
   };
 
   if (loading) {
     return <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', color: 'var(--text-muted)' }}>Loading...</div>;
   }
 
+  // Determine what to render based on auth state and current view
+  const renderContent = () => {
+    if (user && currentView === 'home') {
+      return <Dashboard user={user} />;
+    }
+    
+    switch (currentView) {
+      case 'docs':
+        return <Docs />;
+      case 'pricing':
+        return <Pricing onLogin={handleLogin} />;
+      case 'home':
+      default:
+        return <Landing onLogin={handleLogin} onNavigate={navigate} />;
+    }
+  };
+
   return (
     <div className="app-container">
       <nav className="navbar">
-        <div className="logo">
+        <div className="logo" style={{ cursor: 'pointer' }} onClick={() => navigate('home')}>
           <img src="/logo.png" alt="CyberAgents Logo" className="brand-logo" />
         </div>
         <div className="nav-links">
-          <a href="#features">Features</a>
-          <a href="#oss">Open Source</a>
-          <a href="#pricing">Pricing</a>
+          <a onClick={() => navigate('home')}>Home</a>
+          <a onClick={() => navigate('docs')}>Docs</a>
+          <a onClick={() => navigate('pricing')}>Pricing</a>
         </div>
         <div>
           {user ? (
@@ -60,7 +86,7 @@ function App() {
         </div>
       </nav>
 
-      {user ? <Dashboard user={user} /> : <Landing onLogin={handleLogin} />}
+      {renderContent()}
     </div>
   );
 }

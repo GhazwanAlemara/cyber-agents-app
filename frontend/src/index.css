@@ -50,8 +50,7 @@ button {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: rgba(15, 17, 21, 0.8);
-  backdrop-filter: blur(10px);
+  background-color: #ffffff;
   border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
@@ -75,13 +74,14 @@ button {
 }
 
 .nav-links a {
-  color: var(--text-muted);
-  font-weight: 500;
+  color: #475569;
+  font-weight: 600;
   transition: color 0.2s;
+  cursor: pointer;
 }
 
 .nav-links a:hover {
-  color: var(--text-main);
+  color: #0f1115;
 }
 
 .btn-primary {

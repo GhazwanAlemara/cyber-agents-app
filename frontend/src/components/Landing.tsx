@@ -1,4 +1,9 @@
-function Landing({ onLogin }: { onLogin: () => void }) {
+interface LandingProps {
+  onLogin: () => void;
+  onNavigate: (view: 'home' | 'docs' | 'pricing') => void;
+}
+
+function Landing({ onLogin, onNavigate }: LandingProps) {
   return (
     <main className="landing-page">
       {/* Hero Section */}
@@ -12,7 +17,7 @@ function Landing({ onLogin }: { onLogin: () => void }) {
             <button className="btn-primary large" onClick={onLogin}>
               Start for Free
             </button>
-            <button className="btn-secondary large">
+            <button className="btn-secondary large" onClick={() => onNavigate('docs')}>
               Read the Docs
             </button>
           </div>
@@ -74,13 +79,13 @@ function Landing({ onLogin }: { onLogin: () => void }) {
             <div className="link-group">
               <h4>Product</h4>
               <a href="#features">Features</a>
-              <a href="#pricing">Pricing</a>
-              <a href="#">Changelog</a>
+              <a style={{ cursor: 'pointer' }} onClick={() => onNavigate('pricing')}>Pricing</a>
+              <a href="https://github.com/GhazwanAlemara/cyber-agents-app/commits/main" target="_blank" rel="noreferrer">Changelog</a>
             </div>
             <div className="link-group">
               <h4>Resources</h4>
-              <a href="#">Documentation</a>
-              <a href="#">API Reference</a>
+              <a style={{ cursor: 'pointer' }} onClick={() => onNavigate('docs')}>Documentation</a>
+              <a style={{ cursor: 'pointer' }} onClick={() => onNavigate('docs')}>API Reference</a>
               <a href="#oss">Community</a>
             </div>
           </div>
