@@ -2,7 +2,7 @@ const http = require('http');
 const https = require('https');
 
 // Update this to your deployed Cloud Run URL when available
-const BASE_URL = process.env.API_URL || "http://127.0.0.1:8000";
+const BASE_URL = process.env.API_URL || "https://cyber-agents-ai-engine-890584437356.us-central1.run.app";
 
 async function fetchURL(url, options = {}) {
   return new Promise((resolve, reject) => {
