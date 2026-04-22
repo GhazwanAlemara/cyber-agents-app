@@ -95,7 +95,38 @@ button {
 
 /* Force body down to respect stationary navbar */
 body {
-  padding-top: 100px !important;
+  padding-top: 0 !important; /* Removed fixed padding */
+}
+
+/* Animations for Google Labs Dynamic Background */
+@keyframes floatMesh {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+  33% {
+    transform: translate(-45%, -55%) rotate(10deg) scale(1.1);
+  }
+  66% {
+    transform: translate(-55%, -45%) rotate(-5deg) scale(0.9);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+}
+
+@keyframes floatCard1 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes floatCard2 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes floatCard3 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
 
 .app-container {
@@ -169,13 +200,15 @@ body {
 }
 
 .hero {
-  padding: 2rem 2rem 6rem 2rem;
+  padding: 2rem 2rem 6rem 2rem; /* Reduced top padding */
   display: flex;
   justify-content: center;
   text-align: center;
   background: var(--bg-main);
   position: relative;
   overflow: hidden;
+  min-height: 80vh; /* Make hero section larger for the effect */
+  align-items: center;
 }
 
 .hero::before {
@@ -183,113 +216,64 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80vw;
-  height: 80vw;
+  width: 120vw;
+  height: 120vw;
   background: var(--ai-gradient);
-  opacity: 0.15;
-  filter: blur(100px);
+  opacity: 0.25;
+  filter: blur(120px);
   z-index: 0;
   pointer-events: none;
+  animation: floatMesh 20s ease-in-out infinite alternate;
 }
 
 .hero-content {
-  max-width: 800px;
+  max-width: 900px;
   position: relative;
   z-index: 1;
 }
 
 .hero h1 {
-  font-family: var(--font-display); /* Labs Typography */
-  font-size: 4rem;
+  font-family: var(--font-display);
+  font-size: 5rem; /* Larger text for Labs feel */
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   line-height: 1.1;
   margin-bottom: 1.5rem;
-}
-
-.highlight {
-  background: var(--ai-gradient);
+  background: var(--text-main);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   background-clip: text;
+  mix-blend-mode: overlay; /* Interacts with the moving gradient behind it */
 }
 
-.subtitle {
-  font-size: 1.25rem;
-  color: var(--text-muted);
-  margin-bottom: 3rem;
-  font-family: var(--font-body);
-  line-height: 1.5;
-}
-
-.cta-group {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  margin-bottom: 3rem;
-}
-
-.trusted-by p {
-  color: var(--text-tertiary);
-  font-size: 0.875rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 1rem;
-}
-
-.badges {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.features {
-  padding: 6rem 2rem;
-  background-color: var(--bg-surface);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-.section-header {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
-.section-header h2 {
-  font-family: var(--font-display);
-  font-size: 2.5rem;
-  font-weight: 500;
-  margin-bottom: 1rem;
-}
-
-.section-header p {
-  color: var(--text-muted);
-  font-size: 1.125rem;
-}
-
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+/* Feature Cards with individual animations */
+.feature-card:nth-child(1) { animation: floatCard1 8s ease-in-out infinite; }
+.feature-card:nth-child(2) { animation: floatCard2 10s ease-in-out infinite; }
+.feature-card:nth-child(3) { animation: floatCard3 9s ease-in-out infinite; }
 
 .feature-card {
-  background-color: rgba(30, 30, 30, 0.6); /* Labs Glassmorphism */
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background-color: rgba(30, 30, 30, 0.4); /* More transparent for colorful background to bleed through */
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
   padding: 2.5rem;
   border-radius: var(--radius-lg);
-  border: 1px solid var(--border);
-  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: box-shadow 0.2s;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
 }
 
-.feature-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.6);
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: var(--ai-gradient);
+  opacity: 0.05;
+  filter: blur(50px);
+  pointer-events: none;
 }
 
 .feature-icon {
