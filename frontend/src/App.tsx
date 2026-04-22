@@ -86,7 +86,7 @@ function App() {
       zIndex: 10
     }}>
       <div style={logoStyle} onClick={() => navigate('home')}>
-        <img src="/logo.png" alt="CyberAgents Logo" style={brandLogoStyle} />
+        <img src="/logo-v3.png" alt="CyberAgents Logo" style={brandLogoStyle} />
       </div>
       <div style={navLinksStyle}>
         <a style={navLinkStyle} onClick={() => navigate('home')}>Home</a>
@@ -96,7 +96,7 @@ function App() {
       <div style={{ display: 'flex', alignItems: 'center' }}>
         {user ? (
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-            <img src={user.photoURL || '/logo.png'} alt="Profile" style={{ width: '32px', height: '32px', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.1)' }} />
+            <img src={user.photoURL || '/logo-v3.png'} alt="Profile" style={{ width: '32px', height: '32px', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.1)' }} />
             <button className="btn-secondary" onClick={handleLogout}>Logout</button>
           </div>
         ) : (

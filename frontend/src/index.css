@@ -232,6 +232,12 @@ body {
   z-index: 1;
 }
 
+@keyframes textGradientWave {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 .hero h1 {
   font-family: var(--font-display);
   font-size: 5rem; /* Larger text for Labs feel */
@@ -239,16 +245,16 @@ body {
   letter-spacing: -0.03em;
   line-height: 1.1;
   margin-bottom: 1.5rem;
-  background: var(--text-main);
+  
+  /* Dynamic Colorful Wave Text */
+  background: linear-gradient(270deg, #4285f4, #9b72cb, #d96570, #f4af5f, #4285f4);
+  background-size: 400% 400%;
   -webkit-background-clip: text;
   background-clip: text;
-  mix-blend-mode: overlay; /* Interacts with the moving gradient behind it */
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: textGradientWave 10s ease infinite;
 }
-
-/* Feature Cards with individual animations */
-.feature-card:nth-child(1) { animation: floatCard1 8s ease-in-out infinite; }
-.feature-card:nth-child(2) { animation: floatCard2 10s ease-in-out infinite; }
-.feature-card:nth-child(3) { animation: floatCard3 9s ease-in-out infinite; }
 
 .feature-card {
   background-color: rgba(30, 30, 30, 0.4); /* More transparent for colorful background to bleed through */
@@ -257,23 +263,43 @@ body {
   padding: 2.5rem;
   border-radius: var(--radius-lg);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  transition: box-shadow 0.2s;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
   position: relative;
   overflow: hidden;
 }
 
+@keyframes cardGlowWave {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Colorful dynamic glow for cards on hover */
 .feature-card::before {
   content: '';
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: var(--ai-gradient);
-  opacity: 0.05;
-  filter: blur(50px);
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: var(--radius-lg);
+  padding: 2px;
+  background: linear-gradient(270deg, #4285f4, #9b72cb, #d96570, #f4af5f, #4285f4);
+  background-size: 400% 400%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  animation: cardGlowWave 5s ease infinite;
   pointer-events: none;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.6);
+}
+
+.feature-card:hover::before {
+  opacity: 1;
 }
 
 .feature-icon {

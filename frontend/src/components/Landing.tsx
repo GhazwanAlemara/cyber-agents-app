@@ -72,7 +72,7 @@ function Landing({ onLogin, onNavigate }: LandingProps) {
       <footer className="footer">
         <div className="footer-content">
           <div className="footer-brand">
-            <img src="/logo.png" alt="CyberAgents" className="footer-logo" />
+            <img src="/logo-v3.png" alt="CyberAgents" className="footer-logo" />
             <p>© 2026 CyberAgents. All rights reserved.</p>
           </div>
           <div className="footer-links">
