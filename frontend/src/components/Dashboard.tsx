@@ -34,57 +34,77 @@ function Dashboard({ user }: DashboardProps) {
 
     const loadData = async () => {
       try {
+        console.log("Setting up Firestore listeners for user:", user.uid);
+        
+        // 1. Listen to threat intel for this user
         const intelRef = collection(db, "threat_intel");
+        // NOTE: This query requires a COMPOSITE INDEX in Firestore: user_id (ASC) + timestamp (DESC)
         const qIntel = query(intelRef, where("user_id", "==", user.uid), orderBy("timestamp", "desc"), limit(10));
         
-        unsubscribeIntel = onSnapshot(qIntel, (snapshot) => {
-          let attacksCount = snapshot.docs.length;
-          const newActivities: Activity[] = snapshot.docs.map(doc => {
-            const data = doc.data();
-            return {
-              id: doc.id,
-              type: 'intel',
-              title: 'Prompt Injection Blocked',
-              description: `Agent: ${data.agent_id || 'Unknown'} • Source: Global Intel Network`,
-              status: 'attack',
-              timestamp: data.timestamp?.toDate() || new Date()
-            };
-          });
-          setActivities(prev => {
-            const merged = [...newActivities, ...prev.filter(a => a.type !== 'intel')];
-            return merged.sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime()).slice(0, 10);
-          });
-          setStats(prev => ({ ...prev, attacksBlocked: attacksCount }));
-        });
+        unsubscribeIntel = onSnapshot(qIntel, 
+          (snapshot) => {
+            console.log("Threat intel updated:", snapshot.docs.length);
+            const attacksCount = snapshot.docs.length;
+            const newActivities: Activity[] = snapshot.docs.map(doc => {
+              const data = doc.data();
+              return {
+                id: doc.id,
+                type: 'intel',
+                title: 'Prompt Injection Blocked',
+                description: `Agent: ${data.agent_id || 'Unknown'} • Source: Global Intel Network`,
+                status: 'attack',
+                timestamp: data.timestamp?.toDate() || new Date()
+              };
+            });
+            setActivities(prev => {
+              const filtered = prev.filter(a => a.type !== 'intel');
+              return [...newActivities, ...filtered].sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime()).slice(0, 10);
+            });
+            setStats(prev => ({ ...prev, attacksBlocked: attacksCount }));
+            setLoading(false); // Clear loading on first successful catch
+          },
+          (error) => {
+            console.error("Firestore Intel error:", error);
+            setLoading(false); // Stop hanging on error
+          }
+        );
 
+        // 2. Listen to github events
         const eventsRef = collection(db, "github_events");
         const qEvents = query(eventsRef, orderBy("timestamp", "desc"), limit(10));
         
-        unsubscribeEvents = onSnapshot(qEvents, (snapshot) => {
-          let reposCount = new Set(snapshot.docs.map(d => d.data().payload?.repository?.full_name)).size;
-          let fixesCount = snapshot.docs.filter(d => d.data().event_type === 'pull_request').length;
+        unsubscribeEvents = onSnapshot(qEvents, 
+          (snapshot) => {
+            console.log("GitHub events updated:", snapshot.docs.length);
+            const reposCount = new Set(snapshot.docs.map(d => d.data().payload?.repository?.full_name)).size;
+            const fixesCount = snapshot.docs.filter(d => d.data().event_type === 'pull_request').length;
 
-          const eventActivities: Activity[] = snapshot.docs.map(doc => {
-            const data = doc.data();
-            return {
-              id: doc.id,
-              type: 'event',
-              title: data.event_type === 'pull_request' ? 'Dependency Vulnerability Fixed' : 'Codebase Scanned',
-              description: `Repo: ${data.payload?.repository?.full_name || 'Unknown'} • Action: ${data.event_type}`,
-              status: 'safe',
-              timestamp: data.timestamp?.toDate() || new Date()
-            };
-          });
-          setActivities(prev => {
-            const merged = [...eventActivities, ...prev.filter(a => a.type !== 'event')];
-            return merged.sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime()).slice(0, 10);
-          });
-          setStats(prev => ({ ...prev, reposScanned: reposCount, vulnerabilitiesFixed: fixesCount }));
-          setLoading(false);
-        });
+            const eventActivities: Activity[] = snapshot.docs.map(doc => {
+              const data = doc.data();
+              return {
+                id: doc.id,
+                type: 'event',
+                title: data.event_type === 'pull_request' ? 'Dependency Vulnerability Fixed' : 'Codebase Scanned',
+                description: `Repo: ${data.payload?.repository?.full_name || 'Unknown'} • Action: ${data.event_type}`,
+                status: 'safe',
+                timestamp: data.timestamp?.toDate() || new Date()
+              };
+            });
+            setActivities(prev => {
+              const filtered = prev.filter(a => a.type !== 'event');
+              return [...eventActivities, ...filtered].sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime()).slice(0, 10);
+            });
+            setStats(prev => ({ ...prev, reposScanned: reposCount, vulnerabilitiesFixed: fixesCount }));
+            setLoading(false);
+          },
+          (error) => {
+            console.error("Firestore Events error:", error);
+            setLoading(false);
+          }
+        );
 
       } catch (error) {
-        console.error("Error loading dashboard data:", error);
+        console.error("Critical Data Load error:", error);
         setLoading(false);
       }
     };
