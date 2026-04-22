@@ -17,7 +17,7 @@ body {
   background-color: var(--bg-dark);
   color: var(--text-main);
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  /* Removed overflow-x: hidden which causes severe issues with fixed/sticky navbars */
 }
 
 * {
@@ -44,8 +44,8 @@ button {
   justify-content: space-between !important;
   align-items: center !important;
   padding: 0 2rem !important;
-  height: 140px !important;
-  background-color: #ffffff !important;
+  height: 100px !important; /* REDUCED HEIGHT */
+  background-color: #f8f9fa !important; /* OFF-WHITE */
   border-bottom: 1px solid var(--border) !important;
   position: fixed !important; /* TRULY STATIONARY */
   top: 0 !important;
@@ -64,7 +64,7 @@ button {
 }
 
 .brand-logo {
-  height: 120px !important;
+  height: 80px !important; /* REDUCED LOGO */
   width: auto !important;
   object-fit: contain !important;
   display: block !important;
@@ -72,7 +72,7 @@ button {
 
 /* Force body down to respect stationary navbar */
 body {
-  padding-top: 140px !important;
+  padding-top: 100px !important; /* MATCH NAVBAR */
 }
 
 .app-container {
@@ -145,7 +145,7 @@ body {
 }
 
 .hero {
-  padding: 6rem 2rem;
+  padding: 1rem 2rem 6rem 2rem; /* REDUCED TOP SPACE */
   display: flex;
   justify-content: center;
   text-align: center;
@@ -157,6 +157,7 @@ body {
 }
 
 .hero h1 {
+  font-family: 'Faktum-Bold', sans-serif; /* CUSTOM FONT */
   font-size: 3.5rem;
   line-height: 1.2;
   margin-bottom: 1.5rem;

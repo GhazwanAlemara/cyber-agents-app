@@ -67,8 +67,8 @@ function App() {
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: '0 2rem',
-    height: '140px',
-    backgroundColor: '#ffffff',
+    height: '100px',
+    backgroundColor: '#f8f9fa',
     borderBottom: '1px solid #334155',
     position: 'fixed',
     top: 0,
@@ -87,7 +87,7 @@ function App() {
   };
 
   const brandLogoStyle: React.CSSProperties = {
-    height: '120px',
+    height: '80px',
     width: 'auto',
     objectFit: 'contain',
     display: 'block'
@@ -106,17 +106,17 @@ function App() {
   };
 
   return (
-    <div style={{ paddingTop: '140px' }}>
+    <>
       <header style={navbarStyle}>
-        <div style={logoStyle} onClick={() => navigate('home')}>
+        <div className="logo" onClick={() => navigate('home')} style={logoStyle}>
           <img src="/logo.png" alt="CyberAgents Logo" style={brandLogoStyle} />
         </div>
-        <div style={navLinksStyle}>
+        <div className="nav-links" style={navLinksStyle}>
           <a style={navLinkStyle} onClick={() => navigate('home')}>Home</a>
           <a style={navLinkStyle} onClick={() => navigate('docs')}>Docs</a>
           <a style={navLinkStyle} onClick={() => navigate('pricing')}>Pricing</a>
         </div>
-        <div>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
           {user ? (
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
               <img src={user.photoURL || '/logo.png'} alt="Profile" style={{ width: '32px', height: '32px', borderRadius: '50%', border: '1px solid #334155' }} />
@@ -128,11 +128,10 @@ function App() {
         </div>
       </header>
 
-      <main className="app-container">
+      <main style={{ paddingTop: '100px', display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         {renderContent()}
       </main>
-    </div>
+    </>
   );
-}
-
-export default App;
+  }
+  export default App;
