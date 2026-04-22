@@ -68,15 +68,17 @@ function App() {
     alignItems: 'center',
     padding: '0 2rem',
     height: '100px',
-    backgroundColor: '#f8f9fa',
-    borderBottom: '1px solid #334155',
+    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+    backdropFilter: 'blur(12px)',
+    WebkitBackdropFilter: 'blur(12px)',
+    borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
     position: 'fixed',
     top: 0,
     left: 0,
     right: 0,
     width: '100%',
     zIndex: 9999999,
-    boxShadow: '0 4px 20px rgba(0,0,0,0.15)'
+    boxShadow: '0 4px 20px rgba(0,0,0,0.4)'
   };
 
   const logoStyle: React.CSSProperties = {
@@ -99,8 +101,9 @@ function App() {
   };
 
   const navLinkStyle: React.CSSProperties = {
-    color: '#475569',
-    fontWeight: 600,
+    color: '#9aa0a6',
+    fontWeight: 500,
+    fontFamily: '"Google Sans", Roboto, Arial, sans-serif',
     cursor: 'pointer',
     textDecoration: 'none'
   };
