@@ -10,7 +10,11 @@ ENV APP_HOME /app
 WORKDIR $APP_HOME
 COPY . ./
 
+# Set PYTHONPATH to include the root and thecore_lib
+ENV PYTHONPATH="/app:/app/thecore_lib"
+
 # Install production dependencies.
+RUN pip install --no-cache-dir keyring keyrings.google-artifactregistry-auth
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Run the web service on container startup. Here we use the gunicorn

@@ -2,10 +2,13 @@ import requests
 import json
 import time
 
+import os
+
 # --- CONFIGURATION ---
-BASE_URL = "https://cyberagents.app"
-API_URL = "https://cyber-agents-ai-engine-890584437356.us-central1.run.app"
-WEBHOOK_URL = "https://us-central1-cyber-agents-app.cloudfunctions.net/githubWebhook"
+BASE_URL = os.getenv("BASE_URL", "https://cyberagents.app")
+API_URL = os.getenv("API_URL", "https://cyber-agents-ai-engine-890584437356.us-central1.run.app")
+WEBHOOK_URL = os.getenv("WEBHOOK_URL", "https://us-central1-cyber-agents-app.cloudfunctions.net/githubWebhook")
+STRIPE_WEBHOOK_URL = os.getenv("STRIPE_WEBHOOK_URL", "https://us-central1-cyber-agents-app.cloudfunctions.net/stripeWebhook")
 
 def print_result(name, success, message=""):
     status = "✅ PASS" if success else "❌ FAIL"

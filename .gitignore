@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Firebase
+.firebase/
+firebase-debug.log*
+firestore-debug.log*
+pubsub-debug.log*
+ui-debug.log*
+*.json.key
+serviceAccountKey.json
+secrets.json
+
+# Environment
+.env
+.env.local
+.env.*
+!.env.template
+
+# Build
+dist/
+build/
+
+# OS
+.DS_Store
+Thumbs.db

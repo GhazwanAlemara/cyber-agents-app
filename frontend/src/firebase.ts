@@ -1,18 +1,15 @@
-import { initializeApp } from 'firebase/app';
+import { initCoreDB } from '@thecompany/core/db.js';
 import { getAuth, GithubAuthProvider } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBez6-CbCyqurGnUxi0AbBAibYNRXCxojc",
-  authDomain: "cyber-agents-app.firebaseapp.com",
-  projectId: "cyber-agents-app",
-  storageBucket: "cyber-agents-app.firebasestorage.app",
-  messagingSenderId: "890584437356",
-  appId: "1:890584437356:web:222bfbfb59a1a4b621be49"
+  apiKey: import.meta.env.VITE_PUBLIC_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
-const app = initializeApp(firebaseConfig);
-
-export const auth = getAuth(app);
-export const db = getFirestore(app);
+export const db = initCoreDB(firebaseConfig);
+export const auth = getAuth();
 export const githubProvider = new GithubAuthProvider();

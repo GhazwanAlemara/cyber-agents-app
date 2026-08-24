@@ -5,11 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build --outDir ../dist",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@thecompany/core": "file:../../../TheCore/Library",
+    "firebase": "^10.11.1",
     "react": "^19.2.5",
     "react-dom": "^19.2.5"
   },

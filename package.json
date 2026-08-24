@@ -1,0 +1,9 @@
+{
+  "name": "cyber-agents-root",
+  "private": true,
+  "description": "Root of Cyber-Agents platform",
+  "scripts": {
+    "build": "npm --prefix frontend run build",
+    "test": "node imperial_battle_test.js"
+  }
+}

@@ -1,6 +1,8 @@
 fastapi
 uvicorn
-google-generativeai
-firebase-admin
 pydantic
 requests
+firebase-admin
+google-genai
+google-cloud-firestore
+google-cloud-secret-manager

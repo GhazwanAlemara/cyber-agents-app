@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { db } from '../firebase';
-import { collection, query, where, orderBy, limit, onSnapshot } from 'firebase/firestore';
+import { collection, query, where, orderBy, limit, onSnapshot, doc, type QuerySnapshot, type DocumentData } from 'firebase/firestore';
 import type { User } from 'firebase/auth';
 
 interface DashboardProps {
@@ -16,7 +16,8 @@ interface Activity {
   timestamp: Date;
 }
 
-const GITHUB_APP_SLUG = "cyberagents-app"; // Update this to match your GitHub App's "Public Link" slug
+const GITHUB_APP_SLUG = "cyberagents-app";
+const STRIPE_CHECKOUT_URL = "https://buy.stripe.com/cNi00jfmxftvedpeAq9R60b";
 
 function Dashboard({ user }: DashboardProps) {
   const [stats, setStats] = useState({
@@ -27,25 +28,36 @@ function Dashboard({ user }: DashboardProps) {
 
   const [activities, setActivities] = useState<Activity[]>([]);
   const [loading, setLoading] = useState(true);
+  const [plan, setPlan] = useState<'free' | 'pro'>('free');
 
   useEffect(() => {
     let unsubscribeIntel = () => {};
     let unsubscribeEvents = () => {};
+    let unsubscribeUser = () => {};
 
     const loadData = async () => {
       try {
         console.log("Setting up Firestore listeners for user:", user.uid);
         
+        // 0. Listen to user plan status
+        const userDocRef = doc(db, "users", user.uid);
+        unsubscribeUser = onSnapshot(userDocRef, (docSnap) => {
+          if (docSnap.exists()) {
+            const userData = docSnap.data();
+            setPlan(userData.plan === 'pro' ? 'pro' : 'free');
+          }
+        });
+
         // 1. Listen to threat intel for this user
         const intelRef = collection(db, "threat_intel");
         // NOTE: This query requires a COMPOSITE INDEX in Firestore: user_id (ASC) + timestamp (DESC)
         const qIntel = query(intelRef, where("user_id", "==", user.uid), orderBy("timestamp", "desc"), limit(10));
         
         unsubscribeIntel = onSnapshot(qIntel, 
-          (snapshot) => {
+          (snapshot: QuerySnapshot<DocumentData>) => {
             console.log("Threat intel updated:", snapshot.docs.length);
             const attacksCount = snapshot.docs.length;
-            const newActivities: Activity[] = snapshot.docs.map(doc => {
+            const newActivities: Activity[] = snapshot.docs.map((doc: DocumentData) => {
               const data = doc.data();
               return {
                 id: doc.id,
@@ -63,7 +75,7 @@ function Dashboard({ user }: DashboardProps) {
             setStats(prev => ({ ...prev, attacksBlocked: attacksCount }));
             setLoading(false); // Clear loading on first successful catch
           },
-          (error) => {
+          (error: any) => {
             console.error("Firestore Intel error:", error);
             setLoading(false); // Stop hanging on error
           }
@@ -74,12 +86,12 @@ function Dashboard({ user }: DashboardProps) {
         const qEvents = query(eventsRef, orderBy("timestamp", "desc"), limit(10));
         
         unsubscribeEvents = onSnapshot(qEvents, 
-          (snapshot) => {
+          (snapshot: QuerySnapshot<DocumentData>) => {
             console.log("GitHub events updated:", snapshot.docs.length);
-            const reposCount = new Set(snapshot.docs.map(d => d.data().payload?.repository?.full_name)).size;
-            const fixesCount = snapshot.docs.filter(d => d.data().event_type === 'pull_request').length;
+            const reposCount = new Set(snapshot.docs.map((d: DocumentData) => d.data().payload?.repository?.full_name)).size;
+            const fixesCount = snapshot.docs.filter((d: DocumentData) => d.data().event_type === 'pull_request').length;
 
-            const eventActivities: Activity[] = snapshot.docs.map(doc => {
+            const eventActivities: Activity[] = snapshot.docs.map((doc: DocumentData) => {
               const data = doc.data();
               return {
                 id: doc.id,
@@ -97,13 +109,13 @@ function Dashboard({ user }: DashboardProps) {
             setStats(prev => ({ ...prev, reposScanned: reposCount, vulnerabilitiesFixed: fixesCount }));
             setLoading(false);
           },
-          (error) => {
+          (error: any) => {
             console.error("Firestore Events error:", error);
             setLoading(false);
           }
         );
 
-      } catch (error) {
+      } catch (error: any) {
         console.error("Critical Data Load error:", error);
         setLoading(false);
       }
@@ -113,6 +125,7 @@ function Dashboard({ user }: DashboardProps) {
     return () => {
       unsubscribeIntel();
       unsubscribeEvents();
+      unsubscribeUser();
     };
   }, [user.uid]);
 
@@ -124,8 +137,14 @@ function Dashboard({ user }: DashboardProps) {
           <p style={{ color: 'var(--text-muted)', marginTop: '0.5rem' }}>Welcome back, {user.displayName || user.email}</p>
         </div>
         <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-          <img src="https://img.shields.io/badge/Secured%20by-CyberAgents-3b82f6?style=for-the-badge" alt="Security Badge" />
-          <button className="btn-primary" onClick={() => window.open(`https://github.com/apps/${GITHUB_APP_SLUG}/installations/new`, '_blank')}>Connect New Repo</button>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', marginRight: '1rem' }}>
+             <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Current Plan</span>
+             <span style={{ fontWeight: 'bold', color: plan === 'pro' ? '#10b981' : 'var(--text-primary)' }}>{plan.toUpperCase()}</span>
+          </div>
+          {plan === 'free' && (
+            <button className="btn-primary" onClick={() => window.location.href = `${STRIPE_CHECKOUT_URL}?client_reference_id=${user.uid}`}>Upgrade to Pro</button>
+          )}
+          <button className="btn-secondary" onClick={() => window.open(`https://github.com/apps/${GITHUB_APP_SLUG}/installations/new`, '_blank')}>Connect Repo</button>
         </div>
       </div>
 

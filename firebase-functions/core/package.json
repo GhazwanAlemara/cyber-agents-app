@@ -1,0 +1,13 @@
+{
+  "name": "@thecompany/core",
+  "version": "2.5.0",
+  "main": "db.js",
+  "exports": {
+    ".": "./db.js",
+    "./auth": "./v2/auth.js"
+  },
+  "dependencies": {
+    "firebase": "^10.11.1"
+  },
+  "type": "module"
+}
