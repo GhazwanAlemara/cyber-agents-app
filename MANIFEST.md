@@ -39,8 +39,8 @@
 - **Validation Matrix:** Logic changes (Tier 2) require a successful `core audit` and `imperial_battle_test`.
 
 ## 📜 Expedition Log
-- **2026-08-23:** Executed Sovereign Audit. Implemented 'Absolute Truth' endpoints in ai-engine (`/validate-mcp` and `/a2a-score`). Hardened JSON parsing. Removed forbidden `window.alert` from frontend. Secured AI Engine with API Key middleware. Deployment safely blocked by Identity Mismatch Gatekeeper.
-- **2026-08-02:** Migrated Stripe billing products to primary Data Genius LLC master account. Updated `Dashboard.tsx` and `App.tsx` payment links to `https://buy.stripe.com/cNi00jfmxftvedpeAq9R60b` ($49/mo Pro plan) and deployed update to Firebase Hosting.
+- **2026-08-24:** Finalized Sovereign Audit session. Rectified Identity Mismatch Gatekeeper block and successfully deployed AI Engine to Cloud Run. Executed precision UI calibration (logo dimension tuning, Hero space reduction, Knowledge Hub alignment, Related Articles count modification). Deployed frontend securely via shadow forge protocol.
+- **2026-08-23:** Executed Sovereign Audit. Implemented 'Absolute Truth' endpoints in ai-engine (`/validate-mcp` and `/a2a-score`). Hardened JSON parsing. Removed forbidden `window.alert` from frontend. Secured AI Engine with API Key middleware.
 - **2026-07-24:** Integrated Knowledge Hub / Blog system connected to central SEO Hub (`gs://cyberagents-seo-assets`). Configured GCS CORS, cache-busting, light-paper reading view, related articles grid, pagination, and responsive table container. Verified deployment via Imperial Battle Test.
 - **2026-06-16:** Reconstructed MANIFEST.md into a "Holy Grail" document.
 - **2026-06-15:** Strategic Repositioning to "AI Agent Security Platform" (CyberAgents). Pivoted from broad cybersecurity to niche MCP security.
