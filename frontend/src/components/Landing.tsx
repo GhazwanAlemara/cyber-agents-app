@@ -79,51 +79,51 @@ function Landing({ onLogin, onNavigate, user }: LandingProps) {
         <div className="section-wrapper">
           <div className="section-header">
             <h2>Enterprise Security, <br/>Zero Friction</h2>
-            <p>Everything you need to secure modern AI workflows.</p>
+            <p>Autonomous defense, runtime MCP toolchain isolation, and continuous AI governance.</p>
           </div>
           
           <div className="features-grid">
             <div className="feature-card">
               <div className="feature-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-              </div>
-              <h3>Auto-Remediation</h3>
-              <p>Detects supply chain vulnerabilities and automatically opens a perfectly formatted PR to fix them in seconds, not hours.</p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-icon">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
               </div>
               <h3>Prompt Injection Defense</h3>
-              <p>Middleware SDK to monitor AI agents in real-time, blocking malicious instructions, prompt hijackings, and data exfiltration.</p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-              </div>
-              <h3>Collaborative Intel</h3>
-              <p>When one agent is attacked, the cryptographic signature is shared globally. An attack on one makes the whole network immune.</p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-              </div>
-              <h3>A2A Trust Scoring</h3>
-              <p>Validate identity and trust when agents call other agents. Our proprietary scoring ensures your agentic swarm never leaks context.</p>
+              <p>Real-time middleware to monitor autonomous agents and foundation models, neutralizing direct jailbreaks, recursive prompt hijacking, and sensitive context exfiltration.</p>
             </div>
             <div className="feature-card">
               <div className="feature-icon">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
               </div>
-              <h3>Autonomous Sandboxing</h3>
-              <p>Isolate agent execution in high-security, ephemeral GVisor containers. Execute untrusted code with absolute peace of mind.</p>
+              <h3>MCP Toolchain Armor</h3>
+              <p>Deterministic runtime validation for Model Context Protocol (MCP) tool calls. Restricts outbound tool execution to scoped boundaries and isolates untrusted code in ephemeral sandboxes.</p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+              </div>
+              <h3>The Supernova Shield</h3>
+              <p>Federated trust layer integrated directly with the Supernova MCP Gateway. Verifies execution attestations and cross-signs security proofs across autonomous agents.</p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <h3>A2A Trust & Intent Scoring</h3>
+              <p>Real-time mutual authentication and zero-standing privilege enforcement between collaborating agents. Ensures multi-agent swarms never exceed intended operational scope.</p>
             </div>
             <div className="feature-card">
               <div className="feature-icon">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
               </div>
-              <h3>Compliance-Ready Audit</h3>
-              <p>Automated SOC2 and HIPAA evidence generation for every agent behavior, tool call, and data access point in your infrastructure.</p>
+              <h3>Continuous Regulatory Conformity</h3>
+              <p>Automated Annex III risk re-classification under the EU AI Act, OPA Rego-driven policy gates, and cryptographic Article 12 audit trails aligned with NIST AI RMF and ISO 42001.</p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+              </div>
+              <h3>Automated PR Remediation</h3>
+              <p>Monitors dependencies and agent workflows for newly disclosed CVEs, autonomously opening verified, backwards-compatible Pull Requests with surgical code patches in seconds.</p>
             </div>
           </div>
         </div>
@@ -133,35 +133,39 @@ function Landing({ onLogin, onNavigate, user }: LandingProps) {
       <section className="pricing-section" id="pricing">
         <div className="pricing-header">
           <h2>Transparent, Developer-First Pricing</h2>
-          <p>Start securing your agents for free. Upgrade only when your team needs advanced enterprise controls and higher scale.</p>
+          <p>Start securing your agents for free with live in-browser threat scanning. Upgrade seamlessly for continuous monitoring and enterprise swarm defense.</p>
         </div>
 
         <div className="pricing-grid">
-          {/* Free Tier */}
+          {/* Community Free Tier */}
           <div className="pricing-card">
             <h3>Community</h3>
-            <p style={{ color: 'var(--text-muted)', marginBottom: '1rem' }}>Perfect for solo developers and open-source projects.</p>
+            <p style={{ color: 'var(--text-muted)', marginBottom: '1rem' }}>Ideal for independent developers, security researchers, and open-source projects.</p>
             <div className="pricing-price">$0<span>/month</span></div>
             <ul className="pricing-features">
               <li>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><polyline points="20 6 9 17 4 12"/></svg>
-                Up to 3 Repositories
+                3 Free Interactive Threat & Injection Scans
               </li>
               <li>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><polyline points="20 6 9 17 4 12"/></svg>
-                10,000 Agent Actions / month
+                Up to 3 Connected Repositories
               </li>
               <li>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><polyline points="20 6 9 17 4 12"/></svg>
-                Basic Auto-Remediation PRs
+                10,000 Agent Actions & Invocations / month
               </li>
               <li>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><polyline points="20 6 9 17 4 12"/></svg>
-                Community Support
+                Supernova MCP Gateway Access
               </li>
               <li>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><polyline points="20 6 9 17 4 12"/></svg>
-                Public README Badge
+                Downloadable Certified Audit PDF
+              </li>
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><polyline points="20 6 9 17 4 12"/></svg>
+                Community Support & Verified Badge
               </li>
             </ul>
             <button className="btn-secondary" style={{ width: '100%' }} onClick={() => onLogin()}>Get Started Free</button>
@@ -171,28 +175,36 @@ function Landing({ onLogin, onNavigate, user }: LandingProps) {
           <div className="pricing-card featured">
             <div style={{ position: 'absolute', top: '20px', right: '20px', backgroundColor: 'var(--accent-primary)', color: 'white', padding: '0.25rem 1rem', borderRadius: '20px', fontSize: '0.75rem', fontWeight: 'bold', zIndex: 1 }}>MOST POPULAR</div>
             <h3>Pro</h3>
-            <p style={{ color: 'var(--text-muted)', marginBottom: '1rem' }}>For startups and teams deploying production AI agents.</p>
+            <p style={{ color: 'var(--text-muted)', marginBottom: '1rem' }}>For startups and engineering teams deploying production autonomous agents.</p>
             <div className="pricing-price">$49<span>/month</span></div>
             <ul className="pricing-features">
               <li>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><polyline points="20 6 9 17 4 12"/></svg>
-                Unlimited Repositories
+                Unlimited Interactive Scans & Certified Audits
               </li>
               <li>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><polyline points="20 6 9 17 4 12"/></svg>
-                250,000 Agent Actions / month
+                Unlimited Repositories & Agent Pipelines
               </li>
               <li>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><polyline points="20 6 9 17 4 12"/></svg>
-                Advanced AI Remediation
+                250,000 Real-Time MCP Invocations / month
               </li>
               <li>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><polyline points="20 6 9 17 4 12"/></svg>
-                Slack / Teams Alerts
+                Automated Pull Request Code Patches
               </li>
               <li>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><polyline points="20 6 9 17 4 12"/></svg>
-                Private Threat Intel Dashboard
+                Slack, Discord & Webhook Telemetry Alerts
+              </li>
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><polyline points="20 6 9 17 4 12"/></svg>
+                Private Threat Intelligence Dashboard
+              </li>
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><polyline points="20 6 9 17 4 12"/></svg>
+                Priority Engineering Support
               </li>
             </ul>
             <button className="btn-primary" style={{ width: '100%' }} onClick={() => onLogin('pro')}>Start 14-Day Trial</button>
@@ -201,31 +213,39 @@ function Landing({ onLogin, onNavigate, user }: LandingProps) {
           {/* Enterprise Tier */}
           <div className="pricing-card">
             <h3>Enterprise</h3>
-            <p style={{ color: 'var(--text-muted)', marginBottom: '1rem' }}>For organizations needing compliance and custom deployment.</p>
+            <p style={{ color: 'var(--text-muted)', marginBottom: '1rem' }}>For enterprises requiring compliance assurance, custom models, and dedicated sandboxes.</p>
             <div className="pricing-price">Custom</div>
             <ul className="pricing-features">
               <li>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><polyline points="20 6 9 17 4 12"/></svg>
-                Unlimited Agent Actions
+                Unlimited Autonomous Agent Swarm Actions
               </li>
               <li>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><polyline points="20 6 9 17 4 12"/></svg>
-                SOC2 / HIPAA Compliance Exports
+                Dedicated Supernova AEGIS Security Gateway
               </li>
               <li>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><polyline points="20 6 9 17 4 12"/></svg>
-                Custom AI Model Tuning
+                Continuous EU AI Act & Article 12 Audit Ledgers
               </li>
               <li>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><polyline points="20 6 9 17 4 12"/></svg>
-                SSO (SAML/Okta)
+                Custom Ephemeral MicroVM / GVisor Sandboxing
               </li>
               <li>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><polyline points="20 6 9 17 4 12"/></svg>
-                Dedicated Success Manager
+                Enterprise SSO (Google Workspace, SAML, GitHub)
+              </li>
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><polyline points="20 6 9 17 4 12"/></svg>
+                Custom Fine-Tuned Threat Classification Models
+              </li>
+              <li>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}><polyline points="20 6 9 17 4 12"/></svg>
+                Dedicated Security Architect & 99.99% SLA
               </li>
             </ul>
-            <button className="btn-secondary" style={{ width: '100%' }} onClick={() => window.location.href = 'mailto:support@datagenius.io'}>Contact Sales</button>
+            <button className="btn-secondary" style={{ width: '100%' }} onClick={() => { window.history.pushState({}, '', '/contact'); onNavigate('contact' as any); }}>Contact Enterprise Sales</button>
           </div>
         </div>
       </section>
