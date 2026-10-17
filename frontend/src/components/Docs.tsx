@@ -32,6 +32,7 @@ export default function Docs({ onNavigate }: DocsProps) {
           <li><a href="#api-reference" onClick={(e) => scrollToSection(e, 'api-reference')}>5. API Reference: Real-time Threat Analysis & MCP Boundaries</a></li>
           <li><a href="#supernova-shield" onClick={(e) => scrollToSection(e, 'supernova-shield')}>6. The Supernova Shield & AEGIS Protocol Architecture</a></li>
           <li><a href="#security-scanner" onClick={(e) => scrollToSection(e, 'security-scanner')}>7. Interactive Security Scanner & Certified PDF Audits</a></li>
+          <li><a href="#workspace-auth" onClick={(e) => scrollToSection(e, 'workspace-auth')}>8. Workspace Authentication & Team Access</a></li>
         </ul>
       </div>
 
@@ -197,6 +198,30 @@ else:
             <li>Attestation ID, cryptographic timestamp, and ISO compliance verification seal.</li>
             <li>Actionable remediation code patches ready for immediate production deployment.</li>
           </ul>
+        </div>
+      </section>
+
+      {/* Section 8 - ENTERPRISE WORKSPACE & AUTHENTICATION */}
+      <section id="workspace-auth" className="docs-section">
+        <h2 className="docs-section-title">8. Workspace Authentication & Team Access</h2>
+        <p>
+          CyberAgents provides enterprise-grade identity federation to ensure secure access to vulnerability logs, agent threat telemetry, and certified compliance attestations.
+        </p>
+
+        <div className="docs-card">
+          <h4 className="docs-api-method">Supported Authentication Methods</h4>
+          <ul className="docs-bullet-list">
+            <li><strong>Google Single Sign-On:</strong> Native domain federation directly through <code>cyberagents.app</code> for corporate Google Workspace accounts.</li>
+            <li><strong>GitHub OAuth:</strong> Direct developer sign-in enabling automated repository scanning, pull request remediations, and webhook attestation.</li>
+            <li><strong>Direct Work Email:</strong> Traditional email and password credentials for team members requiring dedicated service or individual workspace credentials.</li>
+          </ul>
+        </div>
+
+        <div className="docs-card">
+          <h4 className="docs-api-method">Session State & Audit Preservation</h4>
+          <p className="docs-api-desc">
+            When users run security scans anonymously through the interactive scanner, trial results and input context are automatically retained across the authentication flow. Once authenticated, certified PDF audit records are instantly generated without requiring re-execution.
+          </p>
         </div>
       </section>
 
