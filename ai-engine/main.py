@@ -14,11 +14,28 @@ import firebase_admin
 from firebase_admin import firestore, credentials
 import subprocess
 
+from fastapi.middleware.cors import CORSMiddleware
 from thecompany_core.db import initCoreDB, get_core_firestore
 from thecompany_core.telemetry import track_request
 
 # Initialize FastAPI
 app = FastAPI(title="CyberAgents AI Engine")
+
+# Configure CORS for production frontend and local development
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "https://cyberagents.app",
+        "https://cyber-agents-app.web.app",
+        "https://cyber-agents-app.firebaseapp.com",
+        "http://localhost:5173",
+        "http://localhost:3000",
+        "*"
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 request_times = defaultdict(list)
 RATE_LIMIT = 60

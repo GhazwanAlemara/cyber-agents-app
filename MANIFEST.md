@@ -1,4 +1,4 @@
-# Ã°Å¸â€ºÂ¡Ã¯Â¸Â PROJECT MANIFEST: Cyber-Agents
+# PROJECT MANIFEST: Cyber-Agents
 
 ## Identity
 - **PROJECT_ID:** cyber-agents-app
@@ -38,7 +38,9 @@
 - **Core Integrity:** Vassals are forbidden from modifying core library internals without approval.
 - **Validation Matrix:** Logic changes (Tier 2) require a successful `core audit` and `imperial_battle_test`.
 
-## Ã°Å¸â€œÅ“ Expedition Log
+## Expedition Log
+
+- **2026-10-17:** Cloud Run AI Engine CORS Resolution & 151-Article Dark Reader Overhaul. Deployed Cloud Run revision `cyber-agents-ai-engine-00048-475` with native FastAPI CORSMiddleware, eliminating OPTIONS preflight 405 errors and restoring live AI prompt injection & MCP tool threat analysis. Synchronized 29 missing articles from GCS bucket `gs://cyberagents-seo-assets/seo_articles/` to local disk (now 151 articles total). Overhauled `BlogPost.tsx`, `prerender.js`, and `index.css`: unified reading surface into an elegant dark slate/navy palette (`#0b1329`) with `#cbd5e1` text and reduced headline sizes; enforced single-H1 rule across all 151 articles (demoting internal section H1s to H2); formatted inline/block LaTeX formulas (`.article-math-inline`, `.article-math-block`); converted raw markdown dividers into styled `<hr class="article-divider" />`; and rendered author avatars with `aria-hidden="true"`. Pre-rendered all 151 article static routes (155 verified sitemap URLs), passed 100% Imperial Battle Test, deployed to Firebase Hosting, purged Cloudflare cache, and verified with live curl testing across production endpoints.
 
 - **2026-10-17:** Production Deployment & Supernova Shield Integration. Deployed Logo 3 (`CyberAgents [The Supernova Shield]`) with cropped horizontal wordmark (`logo-v3.png`, `logo.png`) and square favicon (`favicon.png`). Implemented bi-directional ecosystem linking between `cyberagents.app` and `supernova.cool` (Supernova navigation button, drawer link, AEGIS trust banner, and CyberAgents hero badge/footer directory). Conformed model registries to the 3-Tier Sovereign Model Fleet across the AI engine and Firebase Functions. Rebuilt via Shadow Forge (123 prerendered articles, 127 sitemap URLs), passed 100% Imperial Battle Test, deployed to Firebase Hosting, purged Cloudflare edge cache across 300+ PoPs, and certified via live 8-point production verification suite.
 
@@ -56,7 +58,7 @@
 
 - **2026-09-11:** Executed 100% Comprehensive Deep Audit & Responsive UI Overhaul. Resolved multi-tenant isolation vulnerabilities on Firestore collections by strictly filtering by userId/hostId on Dashboard.tsx, ai-engine, and firebase-functions. Deployed composite indexes via firestore.indexes.json. Re-architected mobile navigation with an animated hamburger drawer (clean text labels, zero emojis), responsive documentation page (`frontend/src/components/Docs.tsx`) with semantic CSS classes and interactive smooth-scrolling TOC, and responsive Blog pagination with mobile-friendly sliding window (3 visible pages on mobile, arrow controls). Passed 100% Imperial Battle Test and deployed to production.
 
-## ## Operational Commands (Imperial CLI)
-- **Ã°Å¸Â§Â  AI Core (Antigravity):**
+## Operational Commands (Imperial CLI)
+- **AI Core (Antigravity):**
   - `agy -r <ID>` (Resumes global sessions securely via Sentinel Auto-Checkpointing)
   - `gemini-sessions` (Retrieves global index map across the Empire)

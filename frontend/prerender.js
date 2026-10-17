@@ -101,7 +101,7 @@ export function run() {
     if (contentHtml) {
       modifiedHtml = modifiedHtml.replace(
         /<div id="root">[\s\S]*?<\/div>(?=\s*(?:<noscript|<script))/i,
-        `<div id="root"><main class="prerendered-content">${contentHtml}</main></div>`
+        `<div id="root"></div>\n    <noscript><main class="prerendered-content">${contentHtml}</main></noscript>`
       );
     }
 
@@ -146,7 +146,48 @@ export function run() {
     const metaDescription = art.meta_description || art.geo_summary || `Technical analysis on ${title} and AI agent security architectures.`;
     const publishDate = art.published_at || art.publish_date || '2026-07-24';
     const author = getAuthorForSlug(slug);
-    const bodyHtml = art.html_content || art.content || art.meta_description || '';
+    
+    // Sanitize article body HTML
+    const rawBody = art.html_content || art.content || art.meta_description || '';
+    let bodyHtml = rawBody.replace(/<h1[^>]*>[\s\S]*?<\/h1>/i, '');
+    bodyHtml = bodyHtml.replace(/^\s*<section>\s*<\/section>/i, '');
+    bodyHtml = bodyHtml.replace(/<h1([^>]*)>/gi, '<h2$1>').replace(/<\/h1>/gi, '</h2>');
+    bodyHtml = bodyHtml.replace(/<p>\s*---\s*<\/p>/gi, '<hr class="article-divider" />');
+    bodyHtml = bodyHtml.replace(/\n\s*---\s*\n/gi, '<hr class="article-divider" />');
+    bodyHtml = bodyHtml.replace(/\$\$([\s\S]*?)\$\$/g, (_, math) => {
+      const formatted = math
+        .replace(/\\text\{([^}]+)\}/g, '$1')
+        .replace(/\\mathbin\{\\Vert\}/g, ' || ')
+        .replace(/\\Vert/g, ' || ')
+        .replace(/\\times/g, ' × ')
+        .replace(/\\ge/g, ' ≥ ')
+        .replace(/\\le/g, ' ≤ ')
+        .replace(/\\to/g, ' → ')
+        .trim();
+      return `<div class="article-math-block"><code>${formatted}</code></div>`;
+    });
+    bodyHtml = bodyHtml.replace(/\$([^\$\n]{1,120}?)\$/g, (_, math) => {
+      const formatted = math
+        .replace(/\\vec\{([a-zA-Z])\}/g, '$1⃗')
+        .replace(/\\text\{([^}]+)\}/g, '$1')
+        .replace(/\\max/g, 'max')
+        .replace(/\\min/g, 'min')
+        .replace(/\\ge/g, '≥')
+        .replace(/\\le/g, '≤')
+        .replace(/\\theta/g, 'θ')
+        .replace(/\\alpha/g, 'α')
+        .replace(/\\beta/g, 'β')
+        .replace(/\\lambda/g, 'λ')
+        .replace(/\\sigma/g, 'σ')
+        .replace(/\\in/g, '∈')
+        .replace(/\\cup/g, '∪')
+        .replace(/\\cap/g, '∩')
+        .replace(/\\subset/g, '⊂')
+        .replace(/\\times/g, '×')
+        .replace(/\\rightarrow/g, '→')
+        .trim();
+      return `<code class="article-math-inline">${formatted}</code>`;
+    });
 
     const articleHtml = `
       <header style="max-width:840px; margin:0 auto 2rem auto; padding:2rem 1rem 1rem 1rem; color:#f8fafc;">
@@ -157,7 +198,7 @@ export function run() {
         </nav>
         <h1 style="font-size:2.25rem; font-weight:800; color:#f8fafc; line-height:1.25; margin-bottom:1rem;">${title}</h1>
         <div style="display:flex; align-items:center; gap:12px; margin-bottom:1.5rem; padding-bottom:1rem; border-bottom:1px solid #334155;">
-          <img src="${author.avatar}" alt="${author.name}" style="width:48px; height:48px; border-radius:50%; object-fit:cover;" />
+          <img src="${author.avatar}" alt="" aria-hidden="true" style="width:48px; height:48px; border-radius:50%; object-fit:cover;" />
           <div>
             <div style="font-weight:700; color:#f8fafc; font-size:0.95rem;">${author.name}</div>
             <div style="color:#94a3b8; font-size:0.8rem;">${author.role} • Published ${new Date(publishDate).toLocaleDateString()}</div>

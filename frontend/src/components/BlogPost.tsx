@@ -125,6 +125,61 @@ export default function BlogPost({ slug, onNavigate, onLogin, user }: BlogPostPr
     "description": description
   };
 
+  // Process and sanitize article HTML from duplicate H1, LaTeX math, and bare delimiters
+  const processArticleHtml = (rawHtml: string) => {
+    if (!rawHtml) return '';
+    let content = rawHtml;
+
+    // 1. Remove duplicate leading <h1>...</h1> (the header already renders article.title)
+    content = content.replace(/<h1[^>]*>[\s\S]*?<\/h1>/i, '');
+    content = content.replace(/^\s*<section>\s*<\/section>/i, '');
+    content = content.replace(/<h1([^>]*)>/gi, '<h2$1>').replace(/<\/h1>/gi, '</h2>');
+
+    // 2. Clean up bare markdown dividers
+    content = content.replace(/<p>\s*---\s*<\/p>/gi, '<hr class="article-divider" />');
+    content = content.replace(/\n\s*---\s*\n/gi, '<hr class="article-divider" />');
+
+    // 3. Format block LaTeX $$ ... $$ into styled math blocks
+    content = content.replace(/\$\$([\s\S]*?)\$\$/g, (_, math) => {
+      const formatted = math
+        .replace(/\\text\{([^}]+)\}/g, '$1')
+        .replace(/\\mathbin\{\\Vert\}/g, ' || ')
+        .replace(/\\Vert/g, ' || ')
+        .replace(/\\times/g, ' × ')
+        .replace(/\\ge/g, ' ≥ ')
+        .replace(/\\le/g, ' ≤ ')
+        .replace(/\\to/g, ' → ')
+        .trim();
+      return `<div class="article-math-block"><code>${formatted}</code></div>`;
+    });
+
+    // 4. Format inline LaTeX $ ... $ into styled inline math tags
+    content = content.replace(/\$([^\$\n]{1,120}?)\$/g, (_, math) => {
+      const formatted = math
+        .replace(/\\vec\{([a-zA-Z])\}/g, '$1⃗')
+        .replace(/\\text\{([^}]+)\}/g, '$1')
+        .replace(/\\max/g, 'max')
+        .replace(/\\min/g, 'min')
+        .replace(/\\ge/g, '≥')
+        .replace(/\\le/g, '≤')
+        .replace(/\\theta/g, 'θ')
+        .replace(/\\alpha/g, 'α')
+        .replace(/\\beta/g, 'β')
+        .replace(/\\lambda/g, 'λ')
+        .replace(/\\sigma/g, 'σ')
+        .replace(/\\in/g, '∈')
+        .replace(/\\cup/g, '∪')
+        .replace(/\\cap/g, '∩')
+        .replace(/\\subset/g, '⊂')
+        .replace(/\\times/g, '×')
+        .replace(/\\rightarrow/g, '→')
+        .trim();
+      return `<code class="article-math-inline">${formatted}</code>`;
+    });
+
+    return content;
+  };
+
   return (
     <article className="blog-post-container">
       <script
@@ -149,8 +204,8 @@ export default function BlogPost({ slug, onNavigate, onLogin, user }: BlogPostPr
         {description && <p className="article-description">{description}</p>}
 
         {/* Author Header Bar */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', margin: '1.25rem 0 1rem 0', padding: '0.75rem 0', borderTop: '1px solid rgba(255,255,255,0.08)', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
-          <img src={author.avatar} alt={author.name} style={{ width: '42px', height: '42px', borderRadius: '50%', objectFit: 'cover', border: '1px solid rgba(56,189,248,0.3)' }} />
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', margin: '1.25rem 0 1.5rem 0', padding: '0.85rem 0', borderTop: '1px solid rgba(255,255,255,0.08)', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+          <img src={author.avatar} alt="" aria-hidden="true" style={{ width: '44px', height: '44px', borderRadius: '50%', objectFit: 'cover', border: '1px solid rgba(56,189,248,0.3)', flexShrink: 0 }} />
           <div>
             <div style={{ fontWeight: 600, color: 'var(--text-main, #f8fafc)', fontSize: '0.95rem' }}>{author.name}</div>
             <div style={{ color: 'var(--text-muted, #94a3b8)', fontSize: '0.8rem' }}>{author.role}</div>
@@ -159,10 +214,27 @@ export default function BlogPost({ slug, onNavigate, onLogin, user }: BlogPostPr
       </div>
       
       {(() => {
-        const paragraphs = (article.html_content || '').split('</p>');
-        const midPoint = Math.max(1, Math.floor(paragraphs.length * 0.3));
-        const firstPart = paragraphs.slice(0, midPoint).join('</p>') + (midPoint > 0 && paragraphs.length > 1 ? '</p>' : '');
-        const secondPart = paragraphs.slice(midPoint).join('</p>');
+        const cleanContent = processArticleHtml(article.html_content || '');
+        
+        // Find top-level section headings (h2) to split cleanly without tag fragmentation
+        const h2Matches = [...cleanContent.matchAll(/<h2[^>]*>/gi)];
+        let firstPart = cleanContent;
+        let secondPart = '';
+
+        if (h2Matches.length >= 2) {
+          // Split before the 2nd h2 (or 3rd if 4+ sections exist) for optimal reading cadence
+          const targetIndex = h2Matches.length >= 4 ? 2 : 1;
+          const splitPos = h2Matches[targetIndex].index!;
+          firstPart = cleanContent.substring(0, splitPos);
+          secondPart = cleanContent.substring(splitPos);
+        } else {
+          // Safe paragraph fallback
+          const pIndex = cleanContent.indexOf('</p>', Math.floor(cleanContent.length * 0.35));
+          if (pIndex !== -1) {
+            firstPart = cleanContent.substring(0, pIndex + 4);
+            secondPart = cleanContent.substring(pIndex + 4);
+          }
+        }
 
         return (
           <>
