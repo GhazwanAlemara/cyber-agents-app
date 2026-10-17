@@ -4,15 +4,20 @@ import Dashboard from './components/Dashboard';
 import Docs from './components/Docs';
 import BlogList from './components/BlogList';
 import BlogPost from './components/BlogPost';
+import Contact from './components/Contact';
+import AuthModal from './components/AuthModal';
 import { auth, githubProvider } from './firebase';
 import { signInWithPopup, onAuthStateChanged, signOut, type User } from 'firebase/auth';
 
 function App() {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
-  const [currentView, setCurrentView] = useState<'home' | 'docs' | 'pricing' | 'blog' | 'blog-post'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'dashboard' | 'docs' | 'pricing' | 'blog' | 'blog-post' | 'contact'>('home');
   const [currentSlug, setCurrentSlug] = useState<string | null>(null);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [authModalOpen, setAuthModalOpen] = useState(false);
+  const [loginIntent, setLoginIntent] = useState<string | null>(null);
 
   useEffect(() => {
     const path = window.location.pathname;
@@ -24,11 +29,17 @@ function App() {
       setCurrentView('blog');
     } else if (path === '/docs') {
       setCurrentView('docs');
+    } else if (path === '/contact') {
+      setCurrentView('contact');
     }
 
     const unsubscribe = onAuthStateChanged(auth, (currentUser: User | null) => {
       setUser(currentUser);
       setLoading(false);
+      
+      if (currentUser && (path === '/' || path === '')) {
+         setCurrentView(prev => prev === 'home' ? 'dashboard' : prev);
+      }
       
       // Check if there was a pending "pro" plan intent
       if (currentUser && localStorage.getItem('login_intent') === 'pro') {
@@ -42,21 +53,10 @@ function App() {
     return unsubscribe;
   }, []);
 
-  const handleLogin = async (intent?: string) => {
-    try {
-      setErrorMsg(null);
-      if (intent) {
-        localStorage.setItem('login_intent', intent);
-      }
-      await signInWithPopup(auth, githubProvider);
-    } catch (error: any) {
-      console.error("Login failed:", error);
-      if (error.code === 'auth/configuration-not-found') {
-        setErrorMsg("CRITICAL ERROR: GitHub Authentication is NOT yet fully configured in your Firebase Console.");
-      } else {
-        setErrorMsg(`Login failed: [${error.code}] ${error.message}`);
-      }
-    }
+  const handleLogin = (intent?: string) => {
+    setErrorMsg(null);
+    setLoginIntent(intent || null);
+    setAuthModalOpen(true);
   };
 
   const handleLogout = async () => {
@@ -64,7 +64,8 @@ function App() {
     setCurrentView('home');
   };
 
-  const navigate = (view: 'home' | 'docs' | 'pricing' | 'blog' | 'blog-post', slug?: string) => {
+  const navigate = (view: 'home' | 'dashboard' | 'docs' | 'pricing' | 'blog' | 'blog-post' | 'contact', slug?: string) => {
+    setMobileMenuOpen(false);
     if (view === 'pricing') {
       setCurrentView('home');
       setTimeout(() => {
@@ -84,85 +85,120 @@ function App() {
     return <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', color: 'var(--text-muted)' }}>Loading...</div>;
   }
 
-  const logoStyle: React.CSSProperties = {
-    display: 'flex',
-    alignItems: 'center',
-    height: '120px', /* Reverted to original as requested */
-    cursor: 'pointer'
-  };
-
-  const brandLogoStyle: React.CSSProperties = {
-    height: '120px', /* Reverted to original as requested */
-    width: 'auto',
-    objectFit: 'contain',
-    display: 'block'
-  };
-
-  const navLinksStyle: React.CSSProperties = {
-    display: 'flex',
-    gap: '1.5rem',
-    alignItems: 'center'
-  };
-
-  const navLinkStyle: React.CSSProperties = {
-    color: '#9aa0a6',
-    fontWeight: 500,
-    fontFamily: '"Google Sans", Roboto, Arial, sans-serif',
-    cursor: 'pointer',
-    textDecoration: 'none'
-  };
-
   // Inline header passed to pages
   const PageHeader = () => (
-    <header style={{ 
-      display: 'flex', 
-      justifyContent: 'space-between', 
-      alignItems: 'center', 
-      padding: '0 2rem', /* Removed top/bottom padding to eliminate empty space */
-      backgroundColor: 'transparent',
-      width: '100%',
-      height: '120px', /* Match logo height exactly to avoid gaps */
-      zIndex: 10,
-      margin: 0 /* No margin at the top */
-    }}>
-      <div style={logoStyle} onClick={() => navigate('home')}>
-        <img src="/logo-v3.png" alt="CyberAgents Logo" style={brandLogoStyle} />
+    <header className="page-header">
+      <div className="logo" onClick={() => navigate('home')}>
+        <img src="/logo-v3.png" alt="CyberAgents Logo" className="brand-logo" />
       </div>
-      <div style={navLinksStyle}>
-        <a style={navLinkStyle} onClick={() => { window.history.pushState({}, '', '/'); navigate('home'); }}>Home</a>
-        <a style={navLinkStyle} onClick={() => { window.history.pushState({}, '', '/blog'); navigate('blog'); }}>Knowledge Hub</a>
-        <a style={navLinkStyle} onClick={() => { window.history.pushState({}, '', '/docs'); navigate('docs'); }}>Docs</a>
-        <a style={navLinkStyle} onClick={() => navigate('pricing')}>Pricing</a>
-      </div>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
+
+      {/* Desktop Navigation Links */}
+      <nav className="nav-links">
+        <a className="nav-link-item" onClick={() => { window.history.pushState({}, '', '/'); navigate('home'); }}>Home</a>
+        <a className="nav-link-item" onClick={() => { window.history.pushState({}, '', '/blog'); navigate('blog'); }}>Knowledge Hub</a>
+        <a className="nav-link-item" onClick={() => { window.history.pushState({}, '', '/docs'); navigate('docs'); }}>Docs</a>
+        <a className="nav-link-item" onClick={() => { window.history.pushState({}, '', '/contact'); navigate('contact'); }}>Contact</a>
+        <a className="nav-link-item" onClick={() => navigate('pricing')}>Pricing</a>
+        <a href="https://supernova.cool" target="_blank" rel="noopener noreferrer" className="nav-link-item" style={{ color: '#ff48b0', fontWeight: 600 }}>Supernova ↗</a>
+        {user && <a className="nav-link-item" onClick={() => navigate('dashboard')}>Dashboard</a>}
+      </nav>
+
+      {/* Desktop Auth Buttons */}
+      <div className="auth-buttons">
         {user ? (
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
             <img src={user.photoURL || '/logo-v3.png'} alt="Profile" style={{ width: '32px', height: '32px', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.1)' }} />
             <button className="btn-secondary" onClick={handleLogout}>Logout</button>
           </div>
         ) : (
-          <button className="btn-primary" onClick={() => handleLogin()}>Login with GitHub</button>
+          <button className="btn-primary" onClick={() => handleLogin()}>Sign In</button>
         )}
       </div>
+
+      {/* Mobile Hamburger Toggle Button */}
+      <button 
+        className={`mobile-menu-toggle ${mobileMenuOpen ? 'open' : ''}`}
+        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+      >
+        <span className="hamburger-bar"></span>
+        <span className="hamburger-bar"></span>
+        <span className="hamburger-bar"></span>
+      </button>
+
+      {/* Mobile Drawer Overlay / Menu */}
+      {mobileMenuOpen && (
+        <div className="mobile-nav-drawer">
+          <nav className="mobile-nav-links">
+            <a className="mobile-nav-item" onClick={() => { window.history.pushState({}, '', '/'); navigate('home'); }}>
+              Home
+            </a>
+            <a className="mobile-nav-item" onClick={() => { window.history.pushState({}, '', '/blog'); navigate('blog'); }}>
+              Knowledge Hub
+            </a>
+            <a className="mobile-nav-item" onClick={() => { window.history.pushState({}, '', '/docs'); navigate('docs'); }}>
+              Docs
+            </a>
+            <a className="mobile-nav-item" onClick={() => { window.history.pushState({}, '', '/contact'); navigate('contact'); }}>
+              Contact
+            </a>
+            <a className="mobile-nav-item" onClick={() => navigate('pricing')}>
+              Pricing
+            </a>
+            <a href="https://supernova.cool" target="_blank" rel="noopener noreferrer" className="mobile-nav-item" style={{ color: '#ff48b0', fontWeight: 600 }}>
+              Supernova MCP Gateway ↗
+            </a>
+            {user && (
+              <a className="mobile-nav-item" onClick={() => navigate('dashboard')}>
+                Dashboard
+              </a>
+            )}
+          </nav>
+
+          <div className="mobile-auth-section">
+            {user ? (
+              <div className="mobile-user-profile">
+                <div className="mobile-user-info">
+                  <img src={user.photoURL || '/logo-v3.png'} alt="Profile" className="mobile-user-avatar" />
+                  <span className="mobile-user-name">{user.displayName || user.email || 'Developer'}</span>
+                </div>
+                <button className="btn-secondary mobile-auth-btn" onClick={() => { setMobileMenuOpen(false); handleLogout(); }}>
+                  Logout
+                </button>
+              </div>
+            ) : (
+              <button className="btn-primary mobile-auth-btn" onClick={() => { setMobileMenuOpen(false); handleLogin(); }}>
+                Sign In
+              </button>
+            )}
+          </div>
+        </div>
+      )}
     </header>
   );
 
   const renderContent = () => {
-    if (user && currentView === 'home') {
-      return (
-        <>
-          <PageHeader />
-          <Dashboard user={user} />
-        </>
-      );
-    }
-
     switch (currentView) {
+      case 'dashboard':
+        if (user) {
+          return (
+            <>
+              <PageHeader />
+              <Dashboard user={user} />
+            </>
+          );
+        }
+        return (
+          <>
+            <PageHeader />
+            <Landing onLogin={handleLogin} onNavigate={navigate} user={user} />
+          </>
+        );
       case 'blog-post':
         return (
           <>
             <PageHeader />
-            <BlogPost slug={currentSlug!} onNavigate={navigate} />
+            <BlogPost slug={currentSlug!} onNavigate={navigate} onLogin={handleLogin} user={user} />
           </>
         );
       case 'blog':
@@ -176,7 +212,14 @@ function App() {
         return (
           <>
             <PageHeader />
-            <Docs />
+            <Docs onNavigate={navigate} />
+          </>
+        );
+      case 'contact':
+        return (
+          <>
+            <PageHeader />
+            <Contact onNavigate={navigate} />
           </>
         );
       case 'home':
@@ -184,7 +227,7 @@ function App() {
         return (
           <>
             <PageHeader />
-            <Landing onLogin={handleLogin} onNavigate={navigate} />
+            <Landing onLogin={handleLogin} onNavigate={navigate} user={user} />
           </>
         );
     }
@@ -201,6 +244,21 @@ function App() {
       <main className="app-container" style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
         {renderContent()}
       </main>
+
+      {/* Sovereign Auth Modal (Google, GitHub, Email/Password) */}
+      <AuthModal 
+        isOpen={authModalOpen} 
+        onClose={() => setAuthModalOpen(false)} 
+        onSuccess={(intent) => {
+          setAuthModalOpen(false);
+          if (intent === 'pro' && user) {
+            window.location.href = `https://buy.stripe.com/cNi00jfmxftvedpeAq9R60b?client_reference_id=${user.uid}`;
+          } else if (intent === 'api-key' || intent === 'limit-upgrade') {
+            setCurrentView('dashboard');
+          }
+        }}
+        intent={loginIntent}
+      />
     </div>
   );
 }

@@ -116,9 +116,12 @@ async function runBattleTest() {
     if (allPassed) {
         console.log("🏆 BATTLE TEST SUCCESSFUL - PLATFORM STABLE");
         console.log("--------------------------------------------------");
+        let d = new Date();
+        d = new Date(d.getTime() - d.getTimezoneOffset() * 60000);
+        let localIso = d.toISOString().replace('Z', '');
         fs.writeFileSync('test_results.json', JSON.stringify({
             status: "passed",
-            timestamp: new Date().toISOString(),
+            timestamp: localIso,
             tests_run: 3
         }));
         process.exit(0);

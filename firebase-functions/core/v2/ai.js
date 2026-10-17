@@ -5,11 +5,12 @@
 import { getIdentity } from "./auth.js";
 
 const MODEL_REGISTRY = {
-    "pro": "gemini-1.5-pro",
-    "flash": "gemini-2.5-flash",
-    "lite": "gemini-3.1-flash-lite", // The 2026 King of Efficiency
-    "vision": "gemini-1.5-flash",
-    "experimental": "gemini-2.0-flash-exp"
+    "pro":          "gemini-3.8-flash",
+    "audit":        "gemini-4-argon",
+    "flash":        "gemini-3.8-flash",
+    "lite":         "gemini-3.1-flash-lite",
+    "vision":       "gemini-3.8-flash",
+    "experimental": "gemini-4-argon"
 };
 
 /**

@@ -6,20 +6,22 @@ from google.genai import types
 logger = logging.getLogger(__name__)
 _genai_client = None
 
-# 2026 Modern Model Registry - Sovereign Upgrade
+# 2026 Sovereign Model Fleet - Unified Standard
 MODELS = {
-    "pro": "gemini-2.5-pro",
-    "flash": "gemini-2.5-flash",
-    "pro_exp": "gemini-3.1-pro",
-    "flash_exp": "gemini-3.1-flash-lite",
     "lite": "gemini-3.1-flash-lite",
-    "video": "gemini-2.5-pro",
-    "audio": "gemini-2.5-pro",
-    "computer": "gemini-3.1-pro",
+    "flash": "gemini-3.8-flash",
+    "vision": "gemini-3.8-flash",
+    "pro": "gemini-3.8-flash",
+    "audit": "gemini-4-argon",
+    "pro_exp": "gemini-4-argon",
+    "flash_exp": "gemini-3.1-flash-lite",
+    "video": "gemini-3.8-flash",
+    "audio": "gemini-3.8-flash",
+    "computer": "gemini-4-argon",
     "image": "imagen-3"
 }
 
-def initCoreAI(api_key: str = None, project: str = None, location: str = "us-central1"):
+def initCoreAI(api_key: str = None, project: str = None, location: str = None):
     """
     Initializes the Unified GenAI Client.
     V2 MANDATE: Defaults to Identity-based Auth (Vertex AI).
@@ -30,10 +32,11 @@ def initCoreAI(api_key: str = None, project: str = None, location: str = "us-cen
     # We ignore os.getenv("GEMINI_API_KEY") to prevent hijacking identity auth
     key = api_key 
     proj = project or os.getenv("GOOGLE_CLOUD_PROJECT", "the-supernova-project")
+    loc = location or os.getenv("GOOGLE_CLOUD_LOCATION") or "global"
 
     if not key:
         # PURE IDENTITY AUTH (2026 Sovereign Standard)
-        _genai_client = genai.Client(vertexai=True, project=proj, location=location)
+        _genai_client = genai.Client(vertexai=True, project=proj, location=loc)
     else:
         # LEGACY KEY AUTH
         _genai_client = genai.Client(api_key=key)
@@ -48,11 +51,15 @@ class ResponseProxy:
     """Mimics the old SDK response object for backward compatibility."""
     def __init__(self, raw_res):
         self._raw = raw_res
+        self.text = ""
         try:
-            self.text = raw_res.candidates[0].content.parts[0].text
-        except (AttributeError, IndexError):
-            self.text = ""
-        self.candidates = raw_res.candidates
+            for part in raw_res.candidates[0].content.parts:
+                if hasattr(part, 'text') and part.text:
+                    self.text = part.text
+                    break
+        except (AttributeError, IndexError, TypeError):
+            pass
+        self.candidates = getattr(raw_res, 'candidates', [])
 
 class ModelProxy:
     """Mimics the old GenerativeModel behavior."""
@@ -65,8 +72,7 @@ class ModelProxy:
         return ResponseProxy(res)
 
     async def generate_content_async(self, prompt, **kwargs):
-        # google-genai handles async differently, but we proxy for compatibility
-        res = self.client.models.generate_content(model=self.model_name, contents=prompt)
+        res = await self.client.aio.models.generate_content(model=self.model_name, contents=prompt)
         return ResponseProxy(res)
 
 def get_core_model(model_tag: str = 'flash'):

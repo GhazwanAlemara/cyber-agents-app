@@ -13,7 +13,7 @@ Write-Host "Deploying Firebase Hosting & Functions..." -ForegroundColor Cyan
 cd firebase-functions
 npm install --silent
 cd ..
-firebase deploy --only "hosting,functions"
+firebase deploy --only "hosting,functions,firestore:indexes"
 
 # 3. Deploy AI Engine to Google Cloud Run
 Write-Host "Deploying AI Engine to Cloud Run..." -ForegroundColor Cyan
@@ -22,7 +22,8 @@ gcloud run deploy cyber-agents-ai-engine `
   --source . `
   --region us-central1 `
   --allow-unauthenticated `
+  --min-instances 0 `
   --project cyber-agents-app
 cd ..
 
-Write-Host "Deployment Complete! 🚀" -ForegroundColor Green
+Write-Host "Deployment Complete!" -ForegroundColor Green

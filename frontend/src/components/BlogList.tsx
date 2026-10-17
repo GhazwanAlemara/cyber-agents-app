@@ -24,6 +24,14 @@ export default function BlogList({ onNavigate }: BlogListProps) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 600);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     const fetchArticles = async () => {
@@ -117,27 +125,48 @@ export default function BlogList({ onNavigate }: BlogListProps) {
           {totalPages > 1 && (
             <div className="pagination-container">
               <button 
-                className="pagination-btn" 
+                className="pagination-btn pagination-nav-btn prev-btn" 
                 disabled={currentPage === 1}
                 onClick={() => handlePageChange(currentPage - 1)}
+                aria-label="Previous Page"
               >
-                Previous
+                <span className="pagination-arrow">&larr;</span>
+                <span className="pagination-text">Prev</span>
               </button>
-              {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => (
-                <button
-                  key={pageNum}
-                  className={`pagination-btn ${pageNum === currentPage ? 'active' : ''}`}
-                  onClick={() => handlePageChange(pageNum)}
-                >
-                  {pageNum}
-                </button>
-              ))}
+              {(() => {
+                const getVisiblePages = (current: number, total: number, mobile: boolean) => {
+                  const maxButtons = mobile ? 3 : 5;
+                  if (total <= maxButtons) return Array.from({ length: total }, (_, i) => i + 1);
+
+                  if (mobile) {
+                    if (current <= 2) return [1, 2, 3];
+                    if (current >= total - 1) return [total - 2, total - 1, total];
+                    return [current - 1, current, current + 1];
+                  }
+
+                  if (current <= 3) return [1, 2, 3, 4, 5];
+                  if (current >= total - 2) return [total - 4, total - 3, total - 2, total - 1, total];
+                  return [current - 2, current - 1, current, current + 1, current + 2];
+                };
+                
+                return getVisiblePages(currentPage, totalPages, isMobile).map((pageNum) => (
+                  <button
+                    key={pageNum}
+                    className={`pagination-btn pagination-num-btn ${pageNum === currentPage ? 'active' : ''}`}
+                    onClick={() => handlePageChange(pageNum)}
+                  >
+                    {pageNum}
+                  </button>
+                ));
+              })()}
               <button 
-                className="pagination-btn" 
+                className="pagination-btn pagination-nav-btn next-btn" 
                 disabled={currentPage === totalPages}
                 onClick={() => handlePageChange(currentPage + 1)}
+                aria-label="Next Page"
               >
-                Next
+                <span className="pagination-text">Next</span>
+                <span className="pagination-arrow">&rarr;</span>
               </button>
             </div>
           )}

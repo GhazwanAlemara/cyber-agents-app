@@ -1,0 +1,947 @@
+[
+    {
+        "id": "8526bfb7-1537-404f-917b-173ff93208c3",
+        "title": "Operationalizing EU AI Act Article 14: Engineering Real-Time Policy Interceptors and Dynamic Risk Escalation Gateways",
+        "slug": "operationalizing-eu-ai-act-article-14-human-oversight-interceptors-gateways",
+        "published_at": "2026-09-19T03:02:14.586891",
+        "publish_date": "2026-09-19T03:02:14.586891",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/128d9c69-f8b2-4545-9101-9bc87a08819f.png",
+        "summary": "A technical blueprint for enterprise AI deployers to implement EU AI Act Article 14 human oversight using real-time policy interceptors and dynamic risk gateways."
+    },
+    {
+        "id": "298b7a56-2995-49ac-8736-8187c6853948",
+        "title": "Architecting Ephemeral SPIFFE/SPIRE Workload Identities and Cryptographic Delegation Chains for Autonomous Multi-Agent Zero-Trust Architecture",
+        "slug": "architecting-ephemeral-spiffe-spire-workload-identities-and-cryptographic-delegation-chains-for-autonomous-multi-agent-zero-trust-architecture",
+        "published_at": "2026-09-18T03:02:18.420727",
+        "publish_date": "2026-09-18T03:02:18.420727",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/42d4427e-4296-414e-b4be-6a529365ca1c.png",
+        "summary": "Strategic insights about Architecting Ephemeral SPIFFE/SPIRE Workload Identities and Cryptographic Delegation Chains for Autonomous Multi-Agent Zero-Trust Architecture"
+    },
+    {
+        "id": "8cdec9c8-a347-4f80-a143-e8f09a82137f",
+        "title": "Implementing NIST AI RMF 1.0 in Enterprise Multi-Agent Systems: Real-Time TEVV, Continuous Risk Mapping, and Automated Governance Pipelines",
+        "slug": "implementing-nist-ai-rmf-1-0-in-enterprise-multi-agent-systems-architecting-real-time-tevv-continuous-risk-mapping-and-automated-governance-pipelines",
+        "published_at": "2026-09-17T03:02:03.894874",
+        "publish_date": "2026-09-17T03:02:03.894874",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/ca0171db-1743-49f7-945d-4ef149067d98.png",
+        "summary": "Strategic insights about Implementing NIST AI RMF 1.0 in Enterprise Multi-Agent Systems: Architecting Real-Time TEVV, Continuous Risk Mapping, and Automated Governance Pipelines"
+    },
+    {
+        "id": "3a72c8fa-e20a-45a0-a5fc-ebcdc899d812",
+        "title": "Verifying Open-Source LLM Weight Integrity: Advanced Techniques for Detecting Latent Adversarial Backdoors in the AI Supply Chain",
+        "slug": "llm-weight-integrity-adversarial-backdoors",
+        "published_at": "2026-09-16T03:02:25.406190",
+        "publish_date": "2026-09-16T03:02:25.406190",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/5e6b0703-a7fb-4f14-ba71-97afd4520d44.png",
+        "summary": "Explore advanced techniques for detecting latent adversarial backdoors in open-source LLM weights. This deep dive covers cryptographic provenance, behavioral analysis, and AI supply chain security, crucial for enterprise AI deployment and cybersecurity."
+    },
+    {
+        "id": "7d8693c2-573e-4bb6-8f54-560c2316e398",
+        "title": "Beyond Prompt Injection: Red-Teaming AI Agent Toolchains for Orchestration Logic Exploitation and Systemic Compromise",
+        "slug": "red-teaming-ai-agent-toolchains-orchestration-logic-exploitation",
+        "published_at": "2026-09-15T03:03:28.914175",
+        "publish_date": "2026-09-15T03:03:28.914175",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/5ce93894-a66b-46d5-817c-abe20b1997cf.png",
+        "summary": "Delve into advanced AI security challenges beyond prompt injection. Learn how to red-team AI agent toolchains to identify orchestration logic exploits and prevent systemic compromise in enterprise AI deployments with CyberAgents."
+    },
+    {
+        "id": "670fb079-83c0-4ff3-9ac1-af93f3ca9d8a",
+        "title": "Dynamic Cognitive Strategy Orchestration: Blending ReAct, Plan-and-Solve, and Tree-of-Thought for Adaptive Enterprise AI Cyber Defense",
+        "slug": "dynamic-cognitive-strategy-orchestration-adaptive-ai-cyber-defense",
+        "published_at": "2026-09-14T03:02:35.624900",
+        "publish_date": "2026-09-14T03:02:35.624900",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/38c0fbe1-2811-44b0-b36c-27d55f925dce.png",
+        "summary": "Explore how to orchestrate advanced AI cognitive strategies like ReAct, Plan-and-Solve, and Tree-of-Thought to build adaptive enterprise AI cyber defense systems. Learn deep technical insights, applications, and how platforms like CyberAgents empower next-gen cybersecurity."
+    },
+    {
+        "id": "6a49b10b-2683-4c3c-87fa-652d0500d164",
+        "title": "Securing the AI Supply Chain: Verifiable Auditing of Open-Source LLM Weights and Third-Party Agent Tool Dependencies",
+        "slug": "securing-ai-supply-chain-llm-weights-agent-tools-auditing",
+        "published_at": "2026-09-13T03:02:07.720818",
+        "publish_date": "2026-09-13T03:02:07.720818",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/5cdfebb0-002e-4e20-9baf-cfcd97def02d.png",
+        "summary": "Explore advanced strategies for securing the AI supply chain, focusing on verifiable auditing of open-source LLM weights and third-party agent tool dependencies. Learn how CyberAgents empowers enterprises to build trusted, resilient AI systems."
+    },
+    {
+        "id": "85e60969-0018-40bd-b934-d6e466f5d962",
+        "title": "Dynamic Least Privilege for LLM Agents: Mitigating Excessive Agency with Context-Aware Policy Orchestration",
+        "slug": "dynamic-least-privilege-for-llm-agents-mitigating-excessive-agency-with-context-aware-policy-orchestration",
+        "published_at": "2026-09-12T03:03:01.611466",
+        "publish_date": "2026-09-12T03:03:01.611466",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/f58b9b93-3cd0-4cd9-842d-9c7a8db63997.png",
+        "summary": "Strategic insights about Dynamic Least Privilege for LLM Agents: Mitigating Excessive Agency with Context-Aware Policy Orchestration"
+    },
+    {
+        "id": "4dce3af6-99af-4ea7-aba7-5b9b8195a5e4",
+        "title": "Next-Gen AI Security: Micro-Authorization, Semantic Validation, and Secure Sandboxes for Autonomous Agents",
+        "slug": "micro-authorization-semantic-validation-for-autonomous-agent-tool-calls-in-secure-sandboxes",
+        "published_at": "2026-09-11T03:02:55.757675",
+        "publish_date": "2026-09-11T03:02:55.757675",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/8d1f763b-524c-42bc-86a3-a8933af35faa.png",
+        "summary": "Strategic insights about Micro-Authorization & Semantic Validation for Autonomous Agent Tool Calls in Secure Sandboxes"
+    },
+    {
+        "id": "e826c649-49aa-43c7-9c91-3602527f88f8",
+        "title": "Architecting Continuous EU AI Act Risk Categorization and Real-time Audit Evidence Generation for Enterprise AI Agent Deployments",
+        "slug": "eu-ai-act-risk-categorization-real-time-audit-evidence-cyberagents",
+        "published_at": "2026-09-10T03:02:38.690773",
+        "publish_date": "2026-09-10T03:02:38.690773",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/c841f16b-de30-4f95-9ed4-2eb7cc6c7766.png",
+        "summary": "Discover how to architect continuous EU AI Act risk categorization and generate real-time audit evidence for enterprise AI agent deployments. Learn about technical strategies, compliance frameworks like NIST AI RMF, and how CyberAgents empowers proactive AI governance."
+    },
+    {
+        "id": "7127bed5-8270-4446-9bd8-614336531590",
+        "title": "Beyond Filtering: Autonomous Agents for Real-Time Context-Aware Redaction of Sensitive Data in Enterprise RAG Outputs",
+        "slug": "autonomous-agents-real-time-rag-redaction",
+        "published_at": "2026-09-09T03:02:43.129505",
+        "publish_date": "2026-09-09T03:02:43.129505",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/5537e9ac-b089-4011-9878-9b103dcac74b.png",
+        "summary": "Explore how autonomous AI agents are revolutionizing sensitive data redaction in enterprise RAG pipelines, moving beyond static filters to deliver real-time, context-aware protection. Learn about the architecture, implementation, and compliance benefits offered by solutions like CyberAgents for robust AI application security."
+    },
+    {
+        "id": "0176348e-c6e8-48f8-9607-1ca9bb54aac4",
+        "title": "Architecting Verifiable Compliance: Autonomous Financial AI Agents for Continuous Regulatory Assurance and Audit Readiness",
+        "slug": "architecting-verifiable-compliance-autonomous-financial-ai-agents",
+        "published_at": "2026-09-08T03:02:35.618971",
+        "publish_date": "2026-09-08T03:02:35.618971",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/e26def31-29df-4ed6-82c0-22dffec95018.png",
+        "summary": "Explore how autonomous financial AI agents, empowered by CyberAgents, deliver continuous regulatory assurance and audit readiness. Deep dive into verifiable AI architecture, XAI, data lineage, and real-time compliance for financial enterprises."
+    },
+    {
+        "id": "f06b1087-db29-429d-b2d8-e4c2b519e2e6",
+        "title": "Architecting Enterprise-Grade AI Guardrails: Integrating NeMo, Llama, and Dynamic Payload Sanitization for Autonomous Agent Security",
+        "slug": "ai-guardrails-nemo-llama-payload-sanitization-cyberagents",
+        "published_at": "2026-09-07T03:03:21.532127",
+        "publish_date": "2026-09-07T03:03:21.532127",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/c511985b-28e7-4bcd-b9a1-a42e2f4f16bb.png",
+        "summary": "Discover how CyberAgents empowers enterprises to secure autonomous AI agents with a robust guardrail architecture combining NeMo Guardrails, Llama Guard, and dynamic payload sanitization. Learn technical strategies for preventing prompt injection, data exfiltration, and ensuring AI safety."
+    },
+    {
+        "id": "49519dc7-6143-46e2-8b60-40f954244032",
+        "title": "Threat Modeling Autonomous AI Agent Swarms: Securing the Interconnected Architecture from Systemic Vulnerabilities",
+        "slug": "threat-modeling-autonomous-ai-agent-swarms-securing-interconnected-architecture",
+        "published_at": "2026-09-06T00:06:32.705825",
+        "publish_date": "2026-09-06T00:06:32.705825",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/fad3a235-b379-4bcc-b72d-ae835796f150.png",
+        "summary": "Explore advanced threat modeling for autonomous AI agent swarms. Learn to secure interconnected architectures, mitigate systemic vulnerabilities, and build resilient enterprise AI with CyberAgents."
+    },
+    {
+        "id": "76a1b082-b1eb-4353-b1da-66deba41f859",
+        "title": "Unleashing Autonomous Agents: Mastering Multi-Stage Attack Paths and Human-Like Lateral Movement in Continuous Penetration Testing",
+        "slug": "autonomous-agents-multi-stage-attack-paths-lateral-movement",
+        "published_at": "2026-09-06T00:04:31.646790",
+        "publish_date": "2026-09-06T00:04:31.646790",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/e125567e-7f05-47ea-9f59-c953640f7fd2.png",
+        "summary": "Explore how autonomous AI agents are revolutionizing continuous penetration testing by intelligently navigating multi-stage attack paths and executing human-like lateral movement, leveraging frameworks like MITRE ATT&CK for proactive cyber defense."
+    },
+    {
+        "id": "1f562820-1d4c-466a-b2aa-dc29588003f1",
+        "title": "Zero-Trust LLM Inference: Autonomous Agents Neutralizing Prompt Injection, Insecure Output, and Data Poisoning",
+        "slug": "zero-trust-llm-inference-autonomous-agents",
+        "published_at": "2026-09-05T00:08:41.203255",
+        "publish_date": "2026-09-05T00:08:41.203255",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/3b4eb727-8b28-48fc-ba53-52debe278c4b.png",
+        "summary": "Explore how autonomous AI agents enforce zero-trust principles during LLM inference, proactively neutralizing prompt injection, insecure output, and data poisoning for robust enterprise AI security. A deep dive for CTOs, CISOs, and AI architects."
+    },
+    {
+        "id": "cd23d381-e9b3-4763-baa0-99b3047028b9",
+        "title": "Orchestrating Autonomous AI Agents for Real-time, Self-Healing Defense Against OWASP LLM Top 10 Threats",
+        "slug": "orchestrating-autonomous-ai-agents-owasp-llm-top-10-defense",
+        "published_at": "2026-09-04T00:15:42.410039",
+        "publish_date": "2026-09-04T00:15:42.410039",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/319d55d7-ff33-4061-b5da-c0d4c072c7a0.png",
+        "summary": "Explore how CyberAgents' autonomous AI agents deliver real-time, self-healing defense against the OWASP LLM Top 10, securing enterprise AI deployments against prompt injection, data poisoning, and more. A technical deep-dive for AI developers, CISOs, and enterprise architects."
+    },
+    {
+        "id": "1ce08bb9-6aef-43ec-a993-33c8778ac4e2",
+        "title": "Autonomous Agents for Predictive IaC Risk: Simulating Attack Paths from Code to Cloud Posture",
+        "slug": "autonomous-agents-predictive-iac-risk-attack-paths",
+        "published_at": "2026-09-04T00:13:57.110911",
+        "publish_date": "2026-09-04T00:13:57.110911",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/9a16f947-c6e3-4fb3-82e4-87afd95a45b9.png",
+        "summary": "Discover how autonomous AI agents are revolutionizing IaC security by simulating attack paths from code to cloud posture, offering predictive risk insights and proactive defense for complex enterprise environments. Learn how CyberAgents enables this futuristic approach."
+    },
+    {
+        "id": "d94ddee5-e6f8-4b82-9f70-2377b2eeb893",
+        "title": "Strategic AI Agent Reasoning: A Comparative Framework for ReAct, Plan-and-Solve, and Tree-of-Thought in Enterprise Automation & Cybersecurity",
+        "slug": "ai-agent-reasoning-react-plan-solve-tree-of-thought-cybersecurity",
+        "published_at": "2026-09-03T00:09:49.554512",
+        "publish_date": "2026-09-03T00:09:49.554512",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/398c7d1b-cfb5-4f02-a4f9-819ad585b3ce.png",
+        "summary": "Explore the advanced AI agent reasoning paradigms\u2014ReAct, Plan-and-Solve, and Tree-of-Thought\u2014and their strategic application in enterprise automation and cybersecurity. Discover how these cognitive architectures empower intelligent autonomous agents to navigate complex challenges, enhance defenses, and drive efficiency."
+    },
+    {
+        "id": "82cd6234-7a2e-4cc1-96a8-169bf9d763c5",
+        "title": "Forge Immutable Compliance: Operationalizing Continuous EU AI Act Conformity Evidence for Self-Evolving AI Agents",
+        "slug": "immutable-compliance-eu-ai-act-self-evolving-agents",
+        "published_at": "2026-09-03T00:06:13.445518",
+        "publish_date": "2026-09-03T00:06:13.445518",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/9db41690-edaa-4888-8049-136f479b1d19.png",
+        "summary": "Discover how enterprises can operationalize continuous EU AI Act conformity evidence for self-evolving AI agents. This deep dive for CTOs, CISOs, and AI leaders explores technical strategies, DLT integration, and how CyberAgents empowers immutable, auditable AI governance."
+    },
+    {
+        "id": "2048f89a-2c8f-4df7-b03a-60b6e6f16f66",
+        "title": "Beyond CSPM: Autonomous AI Agents for Immutable IaC Security Baseline Enforcement and Drift Prevention Across Hybrid Clouds",
+        "slug": "autonomous-ai-agents-iac-security-drift-prevention-cyberagents",
+        "published_at": "2026-09-02T00:13:03.718941",
+        "publish_date": "2026-09-02T00:13:03.718941",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/8723c005-110d-44fc-8889-367d6f3471c7.png",
+        "summary": "Explore how CyberAgents' autonomous AI agents move beyond traditional CSPM, enabling immutable Infrastructure-as-Code (IaC) security baselines and proactive drift prevention across complex hybrid cloud environments. A technical deep dive for CTOs, CISOs, and AI governance teams."
+    },
+    {
+        "id": "599b0d81-5ea7-4292-ad3f-3365847acbfe",
+        "title": "Real-time Data Provenance and Integrity Attestation: The Shield Against LLM Data Poisoning in Autonomous Agent RAG Pipelines",
+        "slug": "real-time-data-provenance-integrity-attestation-llm-data-poisoning-rag-autonomous-agents",
+        "published_at": "2026-09-02T00:09:20.732311",
+        "publish_date": "2026-09-02T00:09:20.732311",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/50c25b4f-78cd-4d84-94ab-8ebbf73e0c2c.png",
+        "summary": "Explore cutting-edge strategies for real-time data provenance and integrity attestation in RAG pipelines to safeguard autonomous agents from LLM data poisoning, essential for secure enterprise AI deployment."
+    },
+    {
+        "id": "b44d9039-e52d-4ae3-af7c-1304f68a995b",
+        "title": "Architecting Continuous EU AI Act Audibility: Blueprints for High-Risk Autonomous Agent Systems",
+        "slug": "eu-ai-act-audibility-autonomous-agents",
+        "published_at": "2026-09-02T00:05:52.019690",
+        "publish_date": "2026-09-02T00:05:52.019690",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/b67a71b2-b709-4e4e-81f0-fd0c34ac7233.png",
+        "summary": "Dive deep into technical blueprints for achieving continuous EU AI Act audibility for high-risk autonomous agents. Learn how CyberAgents helps ensure compliance with actionable strategies and frameworks."
+    },
+    {
+        "id": "4f526056-071b-4c8c-9aa0-94a8f3945e95",
+        "title": "Architecting Explainable AI Agents for Financial Auditing: Beyond Audit Trails to Auditor-Ready Rationale",
+        "slug": "explainable-ai-agents-financial-auditing",
+        "published_at": "2026-09-01T00:36:45.123478",
+        "publish_date": "2026-09-01T00:36:45.123478",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/dbbcda46-9683-4f5f-bf49-e42063c8061c.png",
+        "summary": "Explore how CyberAgents pioneers explainable AI (XAI) agents for financial auditing, moving beyond traditional audit trails to provide transparent, auditor-ready rationales. Learn about technical architectures, regulatory compliance, and practical implementation for enterprise AI deployers and governance teams."
+    },
+    {
+        "id": "8763260e-6080-4cc5-b122-2382d02f98ea",
+        "title": "Securing the AI Nervous System: A CISO's Blueprint for Integrating NeMo Guardrails, Llama Guard, and Adaptive Payload Sanitization in Autonomous Agent Swarms",
+        "slug": "ai-nervous-system-security-ciso-blueprint",
+        "published_at": "2026-09-01T00:14:33.419624",
+        "publish_date": "2026-09-01T00:14:33.419624",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/341cee00-bb0f-4a8a-8918-92d3e2707c1d.png",
+        "summary": "Discover a CISO's blueprint for fortifying autonomous AI agent swarms. Learn how NeMo Guardrails, Llama Guard, and adaptive payload sanitization combine to create an impenetrable defense against emerging AI threats, ensuring secure, ethical, and compliant enterprise AI operations."
+    },
+    {
+        "id": "517a0f12-2ad4-4b32-91e2-4ecbf249b46c",
+        "title": "Operationalizing an Enterprise AI Agent Tool & API Registry: Secure Discovery, Governance, and Dynamic Trust for Multi-Agent Architectures",
+        "slug": "enterprise-ai-agent-tool-api-registry-cyberagents",
+        "published_at": "2026-09-01T00:10:44.232512",
+        "publish_date": "2026-09-01T00:10:44.232512",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/4abb9a2f-ecd9-4f49-834f-35a0345be0db.png",
+        "summary": "Explore the critical need for an Enterprise AI Agent Tool & API Registry for secure discovery, robust governance, and dynamic trust in multi-agent architectures. Learn how CyberAgents enables autonomous AI with unparalleled control and security."
+    },
+    {
+        "id": "ead747af-7b52-4e75-825d-50d9f5ac2846",
+        "title": "Autonomous AI for Dynamic Zero Trust IAM: Real-time Policy Adaptation and Predictive Enforcement",
+        "slug": "autonomous-ai-dynamic-zero-trust-iam",
+        "published_at": "2026-09-01T00:06:30.114796",
+        "publish_date": "2026-09-01T00:06:30.114796",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/8fdbcfb9-22f9-4839-8d06-b2f86f3cfbab.png",
+        "summary": "Explore how autonomous AI agents are revolutionizing Zero Trust IAM by enabling real-time policy adaptation, continuous authentication, and predictive enforcement. Discover the technical depths of AI-driven cybersecurity with CyberAgents."
+    },
+    {
+        "id": "51ce9a1d-760d-4aea-865b-669ba2a7b37d",
+        "title": "Beyond Replacement: Architecting a Hybrid Automation Strategy with LLM Agents and Enterprise RPA",
+        "slug": "hybrid-automation-llm-agents-rpa-cyberagents",
+        "published_at": "2026-08-31T00:08:50.340984",
+        "publish_date": "2026-08-31T00:08:50.340984",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/7e85b479-aaf7-4c7f-8448-f74fe4d2432e.png",
+        "summary": "Discover how to architect a cutting-edge hybrid automation strategy by seamlessly integrating advanced LLM agents with traditional Enterprise RPA. This technical guide, powered by CyberAgents, offers actionable insights for CTOs, CISOs, and automation leaders on deployment, governance, and security."
+    },
+    {
+        "id": "f4a36238-c1a0-4dd0-a5e0-befbc312cdda",
+        "title": "Beyond Signatures: How Autonomous AI Agents Deploy Self-Evolving ML for Zero-Day Network Anomaly Detection & Adaptive EDR",
+        "slug": "autonomous-ai-self-evolving-ml-zero-day-anomaly-detection-edr",
+        "published_at": "2026-08-31T00:05:09.923500",
+        "publish_date": "2026-08-31T00:05:09.923500",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/aea3a787-980b-4898-a9d9-f29861669f5a.png",
+        "summary": "Explore how CyberAgents' autonomous AI agents leverage self-evolving machine learning for unparalleled zero-day network anomaly detection and adaptive EDR, revolutionizing enterprise cybersecurity against novel threats."
+    },
+    {
+        "id": "3f9b54ee-dfe7-4720-a7f0-f1921cd82ee8",
+        "title": "Continuous Runtime Security Auditing for Third-Party AI Agent Tools and External LLM APIs: A New Frontier in AI Supply Chain Security",
+        "slug": "continuous-runtime-security-auditing-ai-agents-llm-apis",
+        "published_at": "2026-08-30T00:15:17.046795",
+        "publish_date": "2026-08-30T00:15:17.046795",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/1cf080a0-0b02-484b-9336-a510cc6e5364.png",
+        "summary": "Explore the critical need for continuous runtime security auditing of third-party AI agents and external LLM APIs. Learn about novel attack vectors, advanced mitigation strategies, and how platforms like CyberAgents provide essential AI supply chain security for enterprise AI deployments."
+    },
+    {
+        "id": "2d39fc19-3081-4423-899c-02b6a38b32fd",
+        "title": "Architecting Accountable Autonomy: Real-time Guardrails for AI SDRs to Prevent Reputational and Financial GTM Risks",
+        "slug": "ai-sdr-real-time-guardrails-gtm-risks",
+        "published_at": "2026-08-30T00:10:28.614847",
+        "publish_date": "2026-08-30T00:10:28.614847",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/129313a4-d35e-4b52-b05a-1cbe62acd191.png",
+        "summary": "Discover how to implement real-time guardrails for AI SDRs, ensuring accountable autonomy to prevent reputational damage and financial GTM risks. Explore technical frameworks, data governance, and continuous monitoring for enterprise AI deployments."
+    },
+    {
+        "id": "180d05a4-9465-4982-8a5d-7da7ebc4c32a",
+        "title": "Unmasking the Elusive: Autonomous AI Agents for Proactive Heisenbug & Edge Case Discovery in Enterprise Software",
+        "slug": "autonomous-ai-agents-heisenbugs-edge-cases-enterprise-software",
+        "published_at": "2026-08-30T00:07:11.039088",
+        "publish_date": "2026-08-30T00:07:11.039088",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/2341f293-86a7-4114-9795-e24d370ea1c8.png",
+        "summary": "Explore how autonomous AI agents, powered by platforms like CyberAgents, revolutionize enterprise software quality by proactively discovering and precisely replicating Heisenbugs and critical edge cases, significantly reducing technical debt and enhancing system resilience."
+    },
+    {
+        "id": "e3220fa3-55a4-4a08-a0b3-29cc311bacda",
+        "title": "Architecting Enterprise Trust: Autonomous AI Agents for Real-time Deepfake and AI-Phishing Authenticity Validation",
+        "slug": "architecting-enterprise-trust-ai-agents-deepfake-phishing-validation",
+        "published_at": "2026-08-29T00:11:46.054471",
+        "publish_date": "2026-08-29T00:11:46.054471",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/5c825acb-d273-4332-b23a-43afe635f795.png",
+        "summary": "Explore how autonomous AI agents, like those from CyberAgents, are revolutionizing defense against deepfakes and AI-phishing with real-time authenticity validation for enterprise-grade trust and cybersecurity resilience."
+    },
+    {
+        "id": "d0f380e4-4870-4961-a629-4c662ecd3f74",
+        "title": "Architecting Immutable Memory Fabrics for Autonomous AI Agents: Ensuring Verifiable Context and Decision Integrity Across RAG & Vector Databases",
+        "slug": "immutable-memory-fabrics-autonomous-ai-agents-rag-vector-databases",
+        "published_at": "2026-08-29T00:07:35.452289",
+        "publish_date": "2026-08-29T00:07:35.452289",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/f4c5e187-3411-4857-b2eb-12dc1d280db0.png",
+        "summary": "Explore how immutable memory fabrics, leveraging advanced RAG and vector database technologies, are critical for securing and verifying the context and decision-making processes of autonomous AI agents. Learn about cryptographic proofs, data provenance, and compliance frameworks for enterprise AI."
+    },
+    {
+        "id": "268f20b0-9f13-4ec4-b9d4-7d836d61418c",
+        "title": "Beyond Noise: Autonomous AI Agents for Intelligent CSPM Prioritization and Self-Healing Remediation",
+        "slug": "autonomous-ai-agents-cspm-prioritization-self-healing",
+        "published_at": "2026-08-28T00:12:09.062799",
+        "publish_date": "2026-08-28T00:12:09.062799",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/078f92c8-603c-4ad7-b758-ec939a520b5f.png",
+        "summary": "Explore how autonomous AI agents, powered by platforms like CyberAgents, revolutionize CSPM with intelligent prioritization, automated risk assessment, and self-healing remediation, drastically cutting alert fatigue and enhancing cloud security posture."
+    },
+    {
+        "id": "6f806a5c-54af-426e-9f54-89ce035b5a62",
+        "title": "Architecting Ethical Autonomy: Proactive Bias Mitigation and Value Alignment in Enterprise AI Agent Decision Engines",
+        "slug": "architecting-proactive-bias-mitigation-value-alignment-autonomous-ai-agents",
+        "published_at": "2026-08-28T00:08:20.612719",
+        "publish_date": "2026-08-28T00:08:20.612719",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/d5d52a3d-1240-4e9f-984f-05796a9b18fc.png",
+        "summary": "Delve into advanced strategies for architecting proactive bias mitigation and value alignment in autonomous AI agent decision engines. This technical guide for CTOs, CISOs, and AI architects covers data-centric, algorithmic, and governance frameworks, demonstrating how platforms like CyberAgents enable responsible, compliant, and ethical AI at enterprise scale."
+    },
+    {
+        "id": "58719940-bf5c-4858-a8ed-b5574bbb2a2c",
+        "title": "Autonomous AI Agents: Orchestrating Dynamic Policy-Driven Isolation for ML-Detected Network Threats",
+        "slug": "autonomous-ai-agents-dynamic-policy-driven-isolation-ml-threats",
+        "published_at": "2026-08-27T00:10:26.413826",
+        "publish_date": "2026-08-27T00:10:26.413826",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/f47d827f-801f-4c6a-88a0-c9025923eaef.png",
+        "summary": "Explore how autonomous AI agents orchestrate dynamic, policy-driven network isolation in real-time, responding to ML-detected threats. A deep dive into CyberAgents' pioneering approach for enterprise cybersecurity."
+    },
+    {
+        "id": "9b01604c-1d1c-48aa-b4e2-6d598f285199",
+        "title": "From Silos to Swarms: Integrating Autonomous AI Agents with Enterprise SOAR, SIEM, and Legacy Systems for Unified Defense",
+        "slug": "from-silos-to-swarms-ai-agents-unified-defense",
+        "published_at": "2026-08-27T00:06:53.978714",
+        "publish_date": "2026-08-27T00:06:53.978714",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/56f19999-57bb-42ff-894b-78d2635f1c44.png",
+        "summary": "Discover how CyberAgents' autonomous AI agents unify enterprise SOAR, SIEM, and legacy systems, transforming fragmented cybersecurity into a hyper-automated, intelligent defense swarm. Learn about multi-agent orchestration, adaptive threat response, and bridging legacy gaps for CTOs and CISOs."
+    },
+    {
+        "id": "1da635a0-4dab-4679-a610-3f6b813ef1b6",
+        "title": "Securing Autonomous Tool-Calling: Real-Time Policy Enforcement in Zero-Trust Execution Sandboxes for Enterprise AI",
+        "slug": "securing-autonomous-tool-calling-real-time-policy-enforcement-zero-trust-sandboxes-enterprise-ai",
+        "published_at": "2026-08-26T00:13:06.317756",
+        "publish_date": "2026-08-26T00:13:06.317756",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/aeaaf33e-947c-42ce-87df-16e6bd785ea5.png",
+        "summary": "Explore advanced strategies for securing autonomous AI agents' tool-calling capabilities. This article details real-time policy enforcement, zero-trust execution sandboxes, and architectural best practices to mitigate AI risks in enterprise environments, with insights into CyberAgents' pioneering approach."
+    },
+    {
+        "id": "2c65b111-15a3-470f-93c9-29aba1f2b2d7",
+        "title": "Operationalizing Zero-Trust Conversational AI: Safeguarding PII and Brand Integrity in Autonomous Customer Success Agents",
+        "slug": "operationalizing-zero-trust-conversational-ai-pii-brand-integrity-autonomous-agents",
+        "published_at": "2026-08-26T00:09:51.325764",
+        "publish_date": "2026-08-26T00:09:51.325764",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/1c6cf0f9-49bc-4104-a9b6-a04e7abe86b4.png",
+        "summary": "Explore how to implement a Zero-Trust security model for autonomous conversational AI, ensuring PII protection and brand integrity. Learn architectural patterns and actionable strategies for enterprise AI deployments with CyberAgents."
+    },
+    {
+        "id": "ece86f00-b45b-4b6c-942f-f102439d374f",
+        "title": "Proactive Cyber Threat Hunting with Tree-of-Thought Agents: Uncovering Stealthy APTs and Zero-Day Exploits",
+        "slug": "proactive-cyber-threat-hunting-tree-of-thought-agents-apts-zero-day-exploits",
+        "published_at": "2026-08-25T00:10:07.468962",
+        "publish_date": "2026-08-25T00:10:07.468962",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/5e5edd02-6406-48b0-9851-10f2ff5076c9.png",
+        "summary": "Explore how Tree-of-Thought (ToT) AI agents, leveraging cognitive architectures like those on CyberAgents, revolutionize proactive cyber threat hunting to detect sophisticated APTs and zero-day exploits with unprecedented precision."
+    },
+    {
+        "id": "5db58f8b-7b5e-4c00-96db-b7b62febe8d5",
+        "title": "Autonomous AI Agents: Fortifying Deep-Seated Trust in Open-Source LLM Weights Against Covert Threats",
+        "slug": "autonomous-ai-agents-llm-weights-trust",
+        "published_at": "2026-08-25T00:06:29.712949",
+        "publish_date": "2026-08-25T00:06:29.712949",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/fee717f2-688f-49e6-917a-cd4c495a2fd9.png",
+        "summary": "Explore how autonomous AI agents, powered by CyberAgents, establish deep-seated trust in open-source LLM weights by detecting and mitigating covert data exfiltration and parameter poisoning, crucial for enterprise AI security."
+    },
+    {
+        "id": "54c20d79-04fc-4d3c-a938-2f84c11ad098",
+        "title": "Adaptive AI Agent Swarms for Continuous Red Teaming: Evolving Tactics to Uncover Zero-Day Risks and Dynamic Attack Paths",
+        "slug": "adaptive-ai-agent-swarms-continuous-red-teaming-zero-day-risks",
+        "published_at": "2026-08-24T00:10:18.059698",
+        "publish_date": "2026-08-24T00:10:18.059698",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/d37692ee-da23-42a8-9329-97356f1e0bd5.png",
+        "summary": "Explore how adaptive AI agent swarms are revolutionizing continuous red teaming, enabling autonomous discovery of zero-day vulnerabilities and dynamic attack paths. Learn about CyberAgents' pioneering approach to proactive cybersecurity."
+    },
+    {
+        "id": "a6a8f795-d130-428b-9a8b-333c823b9d9a",
+        "title": "Architecting Autonomous AI Agents for Generative Adversarial Attack Discovery in LLMs: Unearthing Zero-Day Jailbreaks and Novel Exploits",
+        "slug": "autonomous-ai-agents-llm-attack-discovery",
+        "published_at": "2026-08-24T00:07:15.715203",
+        "publish_date": "2026-08-24T00:07:15.715203",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/0ca37faf-469d-47c4-89ca-8cdef96a29af.png",
+        "summary": "Explore how autonomous AI agents, powered by platforms like CyberAgents, are revolutionizing LLM security by proactively discovering zero-day jailbreaks and novel adversarial exploits, moving beyond traditional red-teaming."
+    },
+    {
+        "id": "06ba1e4b-cb39-433b-b5c3-967caea857a1",
+        "title": "Autonomous AI Agents: Forging a Digital Immune System Against AI-Generated Threats with Behavioral Trust Fabrics",
+        "slug": "autonomous-ai-agents-digital-immune-system-behavioral-trust-fabrics",
+        "published_at": "2026-08-23T00:24:06.554961",
+        "publish_date": "2026-08-23T00:24:06.554961",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/c6451c56-3977-4b52-90f5-513da3edd44f.png",
+        "summary": "Explore how autonomous AI agents act as a digital immune system, proactively countering sophisticated AI-generated phishing, deepfakes, and social engineering attacks using advanced behavioral trust fabrics. Learn technical insights for enterprise defense."
+    },
+    {
+        "id": "d4cc4793-4c09-4698-8737-132c100cd4b2",
+        "title": "Autonomous AI Supply Chain Audits: Vetting Open-Source Model Weights, Third-Party APIs, and Agent Ecosystems for Enterprise Integrity",
+        "slug": "autonomous-ai-supply-chain-audits",
+        "published_at": "2026-08-23T00:16:46.362762",
+        "publish_date": "2026-08-23T00:16:46.362762",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/9628c389-3127-446d-bd31-00cbda9071ee.png",
+        "summary": "Explore autonomous AI supply chain audits for enterprise integrity. Discover how to vet open-source model weights, third-party APIs, and agent ecosystems against emerging threats with CyberAgents."
+    },
+    {
+        "id": "2501d1a4-2311-4903-a51e-e4f67bef4e3c",
+        "title": "Unlocking True Positive Security: How Autonomous Contextual AI Agents Transform Network Anomaly Detection and Intrusion Prevention",
+        "slug": "autonomous-contextual-ai-agents-network-anomaly-detection-intrusion-prevention",
+        "published_at": "2026-08-23T00:13:07.930293",
+        "publish_date": "2026-08-23T00:13:07.930293",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/42b95556-cd05-4f93-9b6b-56b917d480fd.png",
+        "summary": "Explore how autonomous contextual AI agents revolutionize network anomaly detection and intrusion prevention, drastically reducing false positives and enhancing true positive security. Discover the technical architecture, AI techniques, and enterprise benefits for modern SOC operations, powered by platforms like CyberAgents."
+    },
+    {
+        "id": "8eff2f16-b568-4ab8-a385-739ed25c77e6",
+        "title": "Fortifying LLM Agents: Dynamic Countermeasures for Prompt Injection Attacks in Enterprise Automation",
+        "slug": "fortifying-llm-agents-prompt-injection-countermeasures",
+        "published_at": "2026-08-22T12:10:53.340075",
+        "publish_date": "2026-08-22T12:10:53.340075",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/36009090-8a05-425c-94e0-0d5d1902623e.png",
+        "summary": "Explore dynamic countermeasures against prompt injection attacks for LLM agents in enterprise automation. Learn how CyberAgents fortifies AI systems with multi-layered, adaptive defenses."
+    },
+    {
+        "id": "9790da91-caad-4ce7-a629-dc6aea9f9ab2",
+        "title": "Building the Enterprise Nervous System: Architecting Secure, Resilient Communication and Data Fabric for Autonomous AI Agent Swarms",
+        "slug": "enterprise-nervous-system-ai-agent-swarms-cyberagents",
+        "published_at": "2026-08-22T12:07:37.718461",
+        "publish_date": "2026-08-22T12:07:37.718461",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/d79acefb-04a1-4d03-a7b3-6cbe35dd784a.png",
+        "summary": "Explore how to architect a secure, resilient Enterprise Nervous System (ENS) for autonomous AI agent swarms. Delve into communication fabrics, data governance, cybersecurity frameworks like NIST AI RMF, and advanced orchestration strategies crucial for enterprise AI deployment with CyberAgents."
+    },
+    {
+        "id": "3165af28-7e18-4f7e-9b87-278db34e1f99",
+        "title": "Zero Trust's Next Frontier: AI Agents for Continuous, Adaptive Least Privilege Enforcement",
+        "slug": "zero-trust-ai-agents-adaptive-least-privilege",
+        "published_at": "2026-08-21T00:09:39.484482",
+        "publish_date": "2026-08-21T00:09:39.484482",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/6aa1f335-2483-44e7-9211-6af7ce8dab3b.png",
+        "summary": "Explore how AI agents are revolutionizing Zero Trust, enabling continuous, adaptive least privilege enforcement. Discover deep technical insights, real-world applications, and the role of platforms like CyberAgents in securing dynamic enterprise environments."
+    },
+    {
+        "id": "df468770-8637-4694-b4d0-098e813339ad",
+        "title": "Guaranteed Stability: Operationalizing Autonomous CVE Fixes in Production CI/CD Pipelines",
+        "slug": "autonomous-cve-fixes-ci-cd-pipelines",
+        "published_at": "2026-08-21T00:06:32.222672",
+        "publish_date": "2026-08-21T00:06:32.222672",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/948849b9-91db-4353-972c-c9a178c77028.png",
+        "summary": "Discover how AI-driven autonomous agents revolutionize DevSecOps by automatically detecting, analyzing, and fixing CVEs directly within CI/CD pipelines. Learn the technical depth and strategic advantages for enterprises deploying AI, ensuring unparalleled security and operational stability with CyberAgents."
+    },
+    {
+        "id": "adbbff85-bf4a-45ed-9305-dee3254adb78",
+        "title": "Operationalizing Autonomous AI Agents for Real-time Intrusion Prevention: Dynamic Policy Enforcement via ML-Driven Network Telemetry",
+        "slug": "operationalizing-autonomous-ai-agents-intrusion-prevention-ml-telemetry",
+        "published_at": "2026-08-20T00:09:04.456258",
+        "publish_date": "2026-08-20T00:09:04.456258",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/4099e344-9891-4a9c-85fa-c5413f2f91a7.png",
+        "summary": "Explore how autonomous AI agents, powered by ML-driven network telemetry, are revolutionizing real-time intrusion prevention and dynamic policy enforcement for enterprise cybersecurity. Dive into technical architectures and operational strategies for proactive defense."
+    },
+    {
+        "id": "10aa741c-48bc-47ed-a408-00cacd996fec",
+        "title": "Securing Enterprise RAG: Dynamic Context Filtering & Granular Access Control for Unbreachable Confidentiality",
+        "slug": "securing-enterprise-rag-dynamic-context-filtering-granular-access-control-confidentiality-breaches",
+        "published_at": "2026-08-20T00:05:41.242848",
+        "publish_date": "2026-08-20T00:05:41.242848",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/e26cf6e4-1cc8-4db7-a8e4-8be7eb066c2c.png",
+        "summary": "Explore pioneering strategies for securing enterprise RAG pipelines, including dynamic context filtering and granular access control. Prevent data leakage and ensure confidentiality with CyberAgents' advanced AI security framework, crucial for CTOs, CISOs, and AI developers navigating complex LLM deployments."
+    },
+    {
+        "id": "664049c9-bcc5-4c4e-8ddc-0cb78db48d0e",
+        "title": "Autonomous Self-Healing Test Suites: The Next Frontier in Enterprise QA Automation",
+        "slug": "autonomous-self-healing-test-suites-enterprise-qa-automation",
+        "published_at": "2026-08-19T00:11:03.722894",
+        "publish_date": "2026-08-19T00:11:03.722894",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/ed07e22f-28d9-41d5-adae-c28dd8faea03.png",
+        "summary": "Explore autonomous self-healing test suites \u2013 the future of enterprise QA. Discover how AI agents, hyperautomation, and platforms like CyberAgents revolutionize testing, ensuring robust, adaptive, and secure software development for CTOs, CISOs, and enterprise automation leaders."
+    },
+    {
+        "id": "502e7ddf-4393-463a-a012-fae3dfd3ee18",
+        "title": "Continuous Security Compliance for Autonomous Coding Agents: Architecting Self-Enforcing Policy Guardrails within Enterprise DevSecOps",
+        "slug": "continuous-security-compliance-autonomous-coding-agents",
+        "published_at": "2026-08-19T00:07:38.255538",
+        "publish_date": "2026-08-19T00:07:38.255538",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/99034e64-f85d-4d37-b1c4-c11872358e00.png",
+        "summary": "Explore advanced strategies for embedding continuous security compliance into autonomous coding agents. Learn to architect self-enforcing policy guardrails for AI-driven DevSecOps with CyberAgents, ensuring robust, verifiable security in the age of generative AI."
+    },
+    {
+        "id": "35419846-ad9b-4fe4-b2a4-a2d130225259",
+        "title": "Beyond the Black Box: Defining Audit Boundaries and Evidentiary Chains for High-Risk AI Agent Swarms under the EU AI Act",
+        "slug": "eu-ai-act-audit-boundaries-agent-swarms",
+        "published_at": "2026-08-18T15:11:57.561387",
+        "publish_date": "2026-08-18T15:11:57.561387",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/9ebdc5df-df13-4aef-a626-4591d0c469d0.png",
+        "summary": "Navigate EU AI Act compliance for high-risk AI agent swarms. This deep dive defines crucial audit boundaries and robust evidentiary chains, essential for CTOs, CISOs, and AI Governance teams in deploying autonomous enterprise AI safely and compliantly."
+    },
+    {
+        "id": "d61f1c49-cf12-4cb4-b5b4-987eeaeb866d",
+        "title": "EU AI Act Risk Categorization for Autonomous Agents: A Prescriptive Framework for Defining High-Risk & Meeting Tailored Audit Requirements",
+        "slug": "eu-ai-act-risk-categorization-autonomous-agents-audit-requirements",
+        "published_at": "2026-08-18T00:10:30.618717",
+        "publish_date": "2026-08-18T00:10:30.618717",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/cce1fbcf-5a6f-4bf9-8a34-597f82c8d489.png",
+        "summary": "Navigate the EU AI Act's high-risk categorization for autonomous agents with CyberAgents' prescriptive framework. Understand audit requirements, ensure compliance, and deploy secure enterprise AI."
+    },
+    {
+        "id": "c3aec7fa-cada-427e-81f5-31094ea0c883",
+        "title": "Beyond Security Bugs: Architecting Autonomous Agent-Driven Code Quality & Architectural Integrity Guardrails for Enterprise DevSecOps",
+        "slug": "autonomous-agent-code-quality-architectural-integrity-devsecops",
+        "published_at": "2026-08-18T00:07:08.437564",
+        "publish_date": "2026-08-18T00:07:08.437564",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/1547348f-357d-4942-ac5a-8f741a8789c8.png",
+        "summary": "Explore how autonomous AI agents are revolutionizing enterprise DevSecOps by architecting proactive guardrails for code quality and architectural integrity. Learn about semantic analysis, drift detection, and AI model governance for a truly secure and resilient software ecosystem with CyberAgents."
+    },
+    {
+        "id": "4603aacf-41c4-4258-b74b-8ad15bf430bc",
+        "title": "Operationalizing Continuous EU AI Act Compliance: Generating Verifiable Audit Trails for High-Risk Autonomous Agent Swarms",
+        "slug": "eu-ai-act-compliance-verifiable-audit-trails-autonomous-agents",
+        "published_at": "2026-08-17T00:14:33.088977",
+        "publish_date": "2026-08-17T00:14:33.088977",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/13154954-fa68-4db8-ae96-3c43b5c0ea43.png",
+        "summary": "Master continuous EU AI Act compliance for high-risk autonomous agent swarms. Learn technical strategies for verifiable audit trails, leveraging immutable ledgers, AI-driven monitoring, and robust governance frameworks for enterprise AI deployment."
+    },
+    {
+        "id": "205bd107-24d5-4efb-b818-295971e61d5f",
+        "title": "Architecting Zero-Trust Pipelines for AI-Authored Code: Preventing and Detecting Vulnerabilities Introduced by Autonomous Coding Agents",
+        "slug": "zero-trust-ai-authored-code-pipelines",
+        "published_at": "2026-08-17T00:10:35.879390",
+        "publish_date": "2026-08-17T00:10:35.879390",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/ff70654b-7113-4686-b2d1-8897eb813d7f.png",
+        "summary": "Explore how to implement zero-trust principles in AI-driven development pipelines to secure code generated by autonomous agents. Learn about agent identity, continuous verification, and anomaly detection with CyberAgents for robust DevSecOps."
+    },
+    {
+        "id": "954801ec-02d4-4514-803d-58b5b6a8ed52",
+        "title": "Operationalizing Continuous NIST AI RMF: Automating AI Risk with Autonomous Agents",
+        "slug": "operationalizing-continuous-nist-ai-rmf-autonomous-agents",
+        "published_at": "2026-08-16T07:35:52.281998",
+        "publish_date": "2026-08-16T07:35:52.281998",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/2e064cdf-3aaf-4bdb-a6a3-339bba8e14dd.png",
+        "summary": "Discover how autonomous AI agents, powered by CyberAgents, revolutionize the operationalization of the NIST AI Risk Management Framework (AI RMF). Automate AI risk mapping, measurement, and remediation for robust, continuous AI governance in enterprise stacks."
+    },
+    {
+        "id": "daf84a08-d6a9-4be1-b488-4f5cdb9485ee",
+        "title": "Fortifying Autonomous Security Agents: How Tree-of-Thought and ReAct Architectures Enable Self-Correcting Cyber Resilience Against Evolving Threats",
+        "slug": "autonomous-security-agents-tree-of-thought-react",
+        "published_at": "2026-08-16T07:18:05.866501",
+        "publish_date": "2026-08-16T07:18:05.866501",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/cf8be0ca-8bd7-4fc0-a4c5-a141201facf6.png",
+        "summary": "Explore how Tree-of-Thought (ToT) and ReAct architectures empower autonomous security agents with self-correcting cyber resilience. Discover deep technical insights for AI developers and cybersecurity professionals on building adaptive defenses against advanced, evolving threats using platforms like CyberAgents."
+    },
+    {
+        "id": "a6236972-a30f-41fa-978b-f40d1692e6d5",
+        "title": "Operationalizing AI Agent Swarms for End-to-End Application Security Testing: From Dynamic Vulnerability Discovery to Automated Exploit Verification",
+        "slug": "operationalizing-ai-agent-swarms-application-security-testing",
+        "published_at": "2026-08-16T07:06:39.676953",
+        "publish_date": "2026-08-16T07:06:39.676953",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/fd86fa30-7e23-4d78-911f-737c0710d212.png",
+        "summary": "Explore how AI agent swarms, powered by CyberAgents, revolutionize application security testing. Dive deep into autonomous vulnerability discovery, automated exploit verification, and compliance for enterprise AI deployments."
+    },
+    {
+        "id": "def6f035-ff67-41d5-9423-86b888dde7ee",
+        "title": "Fortifying the AI Frontline: End-to-End Security & Compliance for AI SDR Swarms in GTM Revenue Operations",
+        "slug": "fortifying-the-ai-frontline-end-to-end-security-compliance-for-ai-sdr-swarms-in-gtm-revenue-operations",
+        "published_at": "2026-08-16T06:53:16.501019",
+        "publish_date": "2026-08-16T06:53:16.501019",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/e4523033-27c3-43ff-862e-4ca5c37955d8.png",
+        "summary": "Architect robust, end-to-end security and compliance for AI SDR swarms in enterprise GTM revenue operations. Explore advanced threat vectors, NIST AI RMF, OWASP Top 10 for LLMs, and how CyberAgents secures autonomous AI agent deployments."
+    },
+    {
+        "id": "65b6bb3b-a157-4e36-bcc6-1b1187aef12d",
+        "title": "Operationalizing Policy-as-Code for Autonomous Coding Agents: Preventing Supply Chain Attacks and Compliance Gaps in AI-Generated Software",
+        "slug": "operationalizing-policy-as-code-autonomous-agents-ai-software-security",
+        "published_at": "2026-08-15T06:27:42.076399",
+        "publish_date": "2026-08-15T06:27:42.076399",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/6fd38630.png",
+        "summary": "Explore how Policy-as-Code (PaC) is critical for securing AI-generated software. Learn to prevent supply chain attacks and ensure compliance with autonomous coding agents using advanced DevSecOps strategies."
+    },
+    {
+        "id": "6e83e486-b2e5-40a9-b9b6-e0ee1ad76700",
+        "title": "Moving Beyond Brittle: Architecting Adaptive LLM Agents for Zero-Trust Automation, Redefining Enterprise RPA Security and Resilience",
+        "slug": "llm-agents-zero-trust-automation-rpa-security",
+        "published_at": "2026-08-15T06:24:42.275084",
+        "publish_date": "2026-08-15T06:24:42.275084",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/be52d2af.png",
+        "summary": "Explore how adaptive LLM agents, built on Zero-Trust principles, are transforming enterprise automation. Learn about enhanced security, resilience, and actionable strategies for CTOs, CISOs, and AI developers."
+    },
+    {
+        "id": "5d448215-2628-4453-b904-10537a78906a",
+        "title": "Fortifying the Frontier: Zero-Trust Execution Sandboxes for Autonomous AI Agent Tool-Calling and API Integrations in Enterprise Security",
+        "slug": "zero-trust-execution-sandboxes-ai-agent-security",
+        "published_at": "2026-08-14T10:20:23.544870",
+        "publish_date": "2026-08-14T10:20:23.544870",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/fc186e2a.png",
+        "summary": "Explore how zero-trust execution sandboxes are critical for hardening autonomous AI agent tool-calling and API integrations. Learn technical strategies and architectural patterns for enterprise-grade AI security, featuring insights from CyberAgents."
+    },
+    {
+        "id": "95aa31a6-5cba-46be-8a9a-b87cb366cd46",
+        "title": "Beyond Reactive Patches: Operationalizing Contextual AI Agents for Root Cause CVE Remediation in Complex Software Supply Chains",
+        "slug": "contextual-ai-agents-cve-remediation-software-supply-chain",
+        "published_at": "2026-08-13T14:06:01.505318",
+        "publish_date": "2026-08-13T14:06:01.505318",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/c23fe3e3.png",
+        "summary": "Explore how CyberAgents' contextual AI agents deliver automated root cause CVE remediation, enhancing DevSecOps by fixing vulnerabilities in complex software supply chains proactively. Learn about their operationalization, technical capabilities, and the future of AI-driven cybersecurity."
+    },
+    {
+        "id": "dd20a3bd-fcb1-43d0-96ce-630ddd84bd1f",
+        "title": "Autonomous AI Backdoor Detection and Provenance Auditing for Open-Source LLM Weights in Your Enterprise AI Supply Chain",
+        "slug": "autonomous-llm-backdoor-detection-provenance-auditing-cyberagents",
+        "published_at": "2026-08-12T17:10:19.271965",
+        "publish_date": "2026-08-12T17:10:19.271965",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/6d1033ce.png",
+        "summary": "Discover how CyberAgents empowers enterprises to secure their AI supply chain against hidden threats. Implement autonomous backdoor detection and robust provenance auditing for open-source LLM weights, ensuring trust, compliance, and resilience in your intelligent systems."
+    },
+    {
+        "id": "31f0922e-8f67-448a-a6be-15e98fbbba6f",
+        "title": "Operationalizing Multi-Agent Frameworks: A Deep Dive into Security Primitives, Scalability, and Governance for LangGraph, CrewAI, AutoGen, and Semantic Kernel",
+        "slug": "operationalizing-multi-agent-frameworks-security-scalability-governance",
+        "published_at": "2026-08-11T20:40:17.628679",
+        "publish_date": "2026-08-11T20:40:17.628679",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/d968f941.png",
+        "summary": "Explore the critical operational challenges of security, scalability, and governance in multi-agent AI frameworks like LangGraph, CrewAI, AutoGen, and Semantic Kernel. Learn how to deploy enterprise-grade autonomous agents securely and efficiently."
+    },
+    {
+        "id": "238e0a7b-4235-4d56-91ab-41c8e8abe821",
+        "title": "Architecting Autonomous AI Agent Swarms for Predictive EDR: Anticipating Zero-Day Endpoint Attacks and Orchestrating Proactive Micro-Segmentation",
+        "slug": "autonomous-ai-agent-swarms-predictive-edr-microsegmentation",
+        "published_at": "2026-08-11T20:23:41.012829",
+        "publish_date": "2026-08-11T20:23:41.012829",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/46599ebf.png",
+        "summary": "Explore the pioneering architecture of autonomous AI agent swarms for Predictive EDR, designed to anticipate zero-day endpoint attacks and dynamically orchestrate micro-segmentation, transforming enterprise cybersecurity from reactive to anticipatory. Discover how CyberAgents empowers this next-generation defense."
+    },
+    {
+        "id": "7dab36e0-829c-4369-af78-a1645a7d87f5",
+        "title": "Architecting Adaptive Memory Fabrics: Dynamic RAG, Vector Database Orchestration, and Contextual Fidelity for Enterprise AI Agent Swarms",
+        "slug": "adaptive-memory-fabrics-dynamic-rag-vector-db-orchestration-enterprise-ai-agents",
+        "published_at": "2026-08-10T03:57:43.668670",
+        "publish_date": "2026-08-10T03:57:43.668670",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/aa45ef8b.png",
+        "summary": "Explore adaptive memory fabrics for enterprise AI agent swarms. Delve into Dynamic RAG, vector database orchestration (Pinecone, Qdrant, Weaviate), and achieving contextual fidelity for robust, autonomous AI systems."
+    },
+    {
+        "id": "7b171c68-deb2-4968-8b88-684ed334dd17",
+        "title": "Unveiling Multi-Cloud Attack Paths: How Autonomous AI Agents Correlate IaC & CSPM Gaps for Holistic Risk Prioritization",
+        "slug": "multi-cloud-attack-paths-ai-agents-iac-cspm",
+        "published_at": "2026-08-10T03:53:25.668588",
+        "publish_date": "2026-08-10T03:53:25.668588",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/51c5021c.png",
+        "summary": "Explore how autonomous AI agents, like those from CyberAgents, are revolutionizing multi-cloud security by correlating IaC vulnerabilities and CSPM misconfigurations to identify and prioritize complex attack paths, offering unparalleled holistic risk visibility for enterprises."
+    },
+    {
+        "id": "2cf75f63-e538-491a-bf2e-ddd9726f0402",
+        "title": "Architecting Autonomous Integrity: Real-time Validation and Self-Correction for LLM Agent Output Security and Data Chain Protection",
+        "slug": "autonomous-integrity-llm-agent-security",
+        "published_at": "2026-08-09T07:45:11.985518",
+        "publish_date": "2026-08-09T07:45:11.985518",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/62a5065f.png",
+        "summary": "Explore advanced architectures for securing LLM agent outputs and data chains. Learn about real-time validation, self-correction, and how CyberAgents fortifies AI systems against OWASP Top 10 threats, ensuring autonomous integrity for enterprise deployments."
+    },
+    {
+        "id": "12bc0cfd-76c9-484b-8f0c-8b640f898710",
+        "title": "Real-Time Trust Scoring: Architecting Continuous Authorization for Autonomous AI Agents in Zero-Trust IAM",
+        "slug": "real-time-trust-scoring-continuous-authorization-ai-agents-zero-trust-iam",
+        "published_at": "2026-08-09T07:42:09.347185",
+        "publish_date": "2026-08-09T07:42:09.347185",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/67a8af08.png",
+        "summary": "Explore how Real-Time Trust Scoring and Continuous Authorization are critical for securing autonomous AI agents within a Zero-Trust IAM framework. Learn actionable insights, technical architectures, and how CyberAgents empowers dynamic AI security."
+    },
+    {
+        "id": "53e233ef-c3e0-450d-9a8b-e30c0530ab0e",
+        "title": "Architecting Enterprise MLOps for Autonomous AI Agent Swarms: Mastering Continuous Deployment and Adaptive Lifecycle Management",
+        "slug": "mlops-autonomous-ai-agent-swarms-continuous-deployment",
+        "published_at": "2026-08-08T11:37:17.425464",
+        "publish_date": "2026-08-08T11:37:17.425464",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/dacbf203.png",
+        "summary": "Explore advanced MLOps strategies for deploying and managing autonomous AI agent swarms. Learn about continuous deployment, adaptive lifecycle management, and security frameworks critical for enterprise AI, powered by CyberAgents."
+    },
+    {
+        "id": "069ca65b-4062-4af3-beb4-546ffa39f809",
+        "title": "Architecting Stealthy Autonomous Red Teams: AI Agents That Evade EDR and Next-Gen Defenses for Deeper Penetration Testing",
+        "slug": "stealthy-ai-red-teams-evade-edr",
+        "published_at": "2026-08-08T11:33:34.021774",
+        "publish_date": "2026-08-08T11:33:34.021774",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/d4d1a584.png",
+        "summary": "Explore the architecture of AI-driven autonomous red teams designed to evade advanced EDR and next-gen cybersecurity defenses. Learn how CyberAgents leverages multi-agent orchestration, dynamic TTP generation, and sophisticated evasion techniques for unparalleled penetration testing depth and continuous security validation."
+    },
+    {
+        "id": "72307f6f-5dc1-4c72-99c0-2dbb242a956b",
+        "title": "Architecting Autonomous AI Agents for Proactive Architectural Governance: Enforcing Enterprise Code Standards and Design Principles at Scale",
+        "slug": "autonomous-ai-agents-architectural-governance",
+        "published_at": "2026-08-07T15:29:16.695763",
+        "publish_date": "2026-08-07T15:29:16.695763",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/56747803.png",
+        "summary": "Discover how CyberAgents empowers enterprises to deploy autonomous AI agents for proactive architectural governance, ensuring code standards and design principles are enforced at scale, reducing technical debt, and enhancing security."
+    },
+    {
+        "id": "504882db-e0d8-4ee2-b290-48d0dd006ab6",
+        "title": "Forging the Future: AI-Driven Adaptive Zero-Trust for Autonomous AI Agent Action Chains",
+        "slug": "ai-driven-adaptive-zero-trust-autonomous-agents",
+        "published_at": "2026-08-06T19:23:37.267648",
+        "publish_date": "2026-08-06T19:23:37.267648",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/a4625ebf.png",
+        "summary": "Explore AI-Driven Adaptive Zero-Trust (AZT) for autonomous AI agents. This deep dive covers real-time authorization, dynamic policy enforcement, and how CyberAgents secures complex AI action chains against evolving threats."
+    },
+    {
+        "id": "6c0c5282-867c-4626-adf5-754707f67686",
+        "title": "Architecting Autonomous Guardrails: Preventing Prompt Injection and Data Exfiltration in LLM Applications with AI Agents",
+        "slug": "architecting-autonomous-guardrails-llm-security",
+        "published_at": "2026-08-06T19:21:52.871877",
+        "publish_date": "2026-08-06T19:21:52.871877",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/6e22265d.png",
+        "summary": "Explore cutting-edge autonomous guardrail architectures using AI agents to prevent prompt injection and data exfiltration in enterprise LLM applications. Learn how CyberAgents fortifies AI security against OWASP Top 10 for LLMs."
+    },
+    {
+        "id": "31ef4877-e806-4f03-964f-a2de9952b210",
+        "title": "Architecting Self-Validating AI Agents for Automated CVE Fixes: Preventing Regressions in CI/CD",
+        "slug": "architecting-self-validating-ai-agents-cve-remediation-ci-cd-regressions",
+        "published_at": "2026-08-05T23:17:21.240844",
+        "publish_date": "2026-08-05T23:17:21.240844",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/6a3d9b28.png",
+        "summary": "Explore the pioneering architecture of self-validating AI agents for automated CVE remediation in CI/CD, ensuring effectiveness and preventing regressions. Discover how CyberAgents empowers secure, hyperautomated DevSecOps workflows."
+    },
+    {
+        "id": "116da53d-770a-4d31-a736-996d28646be7",
+        "title": "Architecting Autonomous Red Teams: AI Agents for Continuous LLM Stress Testing & Adversarial Discovery",
+        "slug": "autonomous-ai-red-teams-llm-stress-testing",
+        "published_at": "2026-08-05T03:08:41.293727",
+        "publish_date": "2026-08-05T03:08:41.293727",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/251ea3bc.png",
+        "summary": "Explore how autonomous AI agents are revolutionizing LLM security. Learn to build adaptive red teams for continuous stress testing, jailbreak detection, and adversarial attack surface discovery using CyberAgents' platform. Deep dive into methodologies and frameworks for resilient AI systems."
+    },
+    {
+        "id": "fe680401-057d-4022-896f-8ee8427af1a0",
+        "title": "Architecting Proactive Customer Success: How Autonomous AI Agents Anticipate Needs, Resolve Issues, and Drive Outcome-Based Engagement",
+        "slug": "proactive-customer-success-autonomous-ai-agents",
+        "published_at": "2026-08-05T03:07:03.845229",
+        "publish_date": "2026-08-05T03:07:03.845229",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/46fc1948.png",
+        "summary": "Explore the technical architecture and strategic advantages of deploying autonomous AI agents for proactive customer success. Learn how CyberAgents enables enterprises to anticipate needs, resolve issues, and drive outcome-based engagement with advanced hyperautomation and secure AI."
+    },
+    {
+        "id": "bb7e8d08-8f7c-4119-bd1e-3a9d0d396471",
+        "title": "Beyond Secure Code Review: Architecting AI Coding Agents for Autonomous Vulnerability Remediation and Self-Healing Security Refactoring",
+        "slug": "ai-agents-autonomous-vulnerability-remediation-security-refactoring",
+        "published_at": "2026-08-04T07:04:29.101948",
+        "publish_date": "2026-08-04T07:04:29.101948",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/ebb39c5c.png",
+        "summary": "Explore how AI coding agents transcend traditional secure code review, offering autonomous vulnerability remediation and self-healing security refactoring for enterprise applications. Discover the architecture, frameworks, and transformative potential with CyberAgents."
+    },
+    {
+        "id": "91ef0c7d-7159-4e89-aef7-52cf378c3fa0",
+        "title": "Architecting Real-Time Decision Provenance: End-to-End Auditability and Causal Explainability for Autonomous AI Agent Action Chains",
+        "slug": "architecting-real-time-decision-provenance-end-to-end-auditability-and-causal-explainability-for-autonomous-ai-agent-action-chains",
+        "published_at": "2026-08-03T10:58:59.571086",
+        "publish_date": "2026-08-03T10:58:59.571086",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/da68bc0c.png",
+        "summary": "Strategic insights about Architecting Real-Time Decision Provenance: End-to-End Auditability and Causal Explainability for Autonomous AI Agent Action Chains"
+    },
+    {
+        "id": "11cf9ad3-b9e1-4313-ac29-f64041a3712c",
+        "title": "Beyond Human IAM: Architecting Zero-Trust Identity & Access Management for Autonomous AI Agent Swarms",
+        "slug": "zero-trust-iam-autonomous-ai-agent-swarms",
+        "published_at": "2026-08-02T14:51:29.619128",
+        "publish_date": "2026-08-02T14:51:29.619128",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/e1f1eead.png",
+        "summary": "Explore the critical shift from human-centric to agent-centric Zero-Trust IAM for securing autonomous AI agent swarms. Learn how to implement robust identity, access control, and continuous verification mechanisms for enterprise AI deployments with CyberAgents."
+    },
+    {
+        "id": "88510ffb-1caf-4031-a192-8a5e81512770",
+        "title": "Proactive Resilience Beyond Prediction: Securing Autonomous Supply Chain Agents Against Geopolitical & Economic Volatility",
+        "slug": "proactive-resilience-securing-autonomous-supply-chain-agents-geopolitical-economic-volatility",
+        "published_at": "2026-08-02T14:47:40.318688",
+        "publish_date": "2026-08-02T14:47:40.318688",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/6cefd5a3.png",
+        "summary": "Explore cutting-edge strategies for securing autonomous AI agents in supply chains against geopolitical and economic volatility. Learn how CyberAgents enables proactive resilience, threat intelligence, and robust governance for enterprise AI."
+    },
+    {
+        "id": "11fb4b62-81a3-4186-8657-6fb6868733b9",
+        "title": "Proactive NIST AI RMF Compliance: Autonomous Risk Mitigation with Self-Healing AI Agents",
+        "slug": "nist-ai-rmf-proactive-compliance-self-healing-agents",
+        "published_at": "2026-08-01T18:41:54.686407",
+        "publish_date": "2026-08-01T18:41:54.686407",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/2fed6b70.png",
+        "summary": "Discover how CyberAgents' self-healing AI agents enable proactive NIST AI RMF compliance, automating risk mitigation and control enforcement for enterprise AI systems. A technical deep dive for CTOs, CISOs, and AI governance teams."
+    },
+    {
+        "id": "24d0a1b7-64d5-45af-a2a7-faab5b509f84",
+        "title": "The AI Counter-Offensive: How Autonomous Agents Disrupt AI-Generated Phishing, Deepfakes, and Sophisticated Social Engineering at Machine Speed",
+        "slug": "ai-counter-offensive-autonomous-agents-cyberagents",
+        "published_at": "2026-08-01T18:38:07.419017",
+        "publish_date": "2026-08-01T18:38:07.419017",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/719c8a7c.png",
+        "summary": "Discover how autonomous AI agents, like those powered by CyberAgents, are revolutionizing cybersecurity by detecting and neutralizing advanced AI-generated threats such as phishing, deepfakes, and social engineering at unprecedented machine speed. Dive into the technical architecture and strategic advantages for enterprise security."
+    },
+    {
+        "id": "6b8b0fb5-5d3e-4ee5-be27-c4e31df711a9",
+        "title": "Beyond RPA's Predictability: Architecting Dynamic Risk & Operational Integrity for Autonomous LLM Automation",
+        "slug": "llm-automation-risk-operational-integrity",
+        "published_at": "2026-07-31T22:33:13.066836",
+        "publish_date": "2026-07-31T22:33:13.066836",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/c94f9c45.png",
+        "summary": "Explore the critical shift from deterministic RPA to dynamic LLM automation. Learn how to architect robust risk management and operational integrity frameworks for autonomous AI agents, leveraging advanced strategies and platforms like CyberAgents for enterprise-grade security and governance."
+    },
+    {
+        "id": "22e5c07b-9709-489c-9a0c-a217b6c5282f",
+        "title": "Beyond Detection: AI Agents for Autonomous Remediation in Self-Healing IaC Security and Proactive CSPM",
+        "slug": "ai-agents-autonomous-remediation-iac-security-cspm",
+        "published_at": "2026-07-31T02:28:37.625857",
+        "publish_date": "2026-07-31T02:28:37.625857",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/7bdaeca2.png",
+        "summary": "Explore how autonomous AI agents are revolutionizing IaC security and CSPM, moving beyond mere detection to proactive, self-healing remediation. Learn about agentic architectures, automated threat response, and how CyberAgents empowers this next generation of cyber defense."
+    },
+    {
+        "id": "33995e7d-3863-4e8b-90ab-13473ad46b0b",
+        "title": "Architecting Trustworthy AI Coding Agents: Verification & Validation Frameworks for Secure DevSecOps Pipelines",
+        "slug": "trustworthy-ai-coding-agents-verification-validation-devsecops",
+        "published_at": "2026-07-30T06:24:12.168803",
+        "publish_date": "2026-07-30T06:24:12.168803",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/7fe784dc.png",
+        "summary": "Explore robust Verification & Validation (V&V) frameworks for AI coding agents to ensure security, compliance, and reliability in enterprise DevSecOps pipelines. Learn how to mitigate risks and build trustworthy autonomous software development with CyberAgents."
+    },
+    {
+        "id": "52c53ff4-5de4-4ef0-a3dd-c79a7f741eb2",
+        "title": "Beyond Brittle Bots: Architecting Adaptive, Secure LLM Agent Swarms for Hyperautomating Dynamic Enterprise Workflows",
+        "slug": "llm-agent-swarms-hyperautomation-security-cyberagents",
+        "published_at": "2026-07-30T06:22:15.953355",
+        "publish_date": "2026-07-30T06:22:15.953355",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/6d86f1dd.png",
+        "summary": "Explore the advanced architecture and critical security principles for deploying adaptive, secure LLM agent swarms. Learn how CyberAgents empowers enterprises to move beyond traditional RPA for hyperautomation, enhancing resilience and addressing AI governance."
+    },
+    {
+        "id": "cb3c0839-a32c-4403-8182-54f63fd70a5d",
+        "title": "Architecting Self-Healing Autonomous AI Agents: Proactive Resilience for Uninterrupted Enterprise Cybersecurity Operations",
+        "slug": "architecting-self-healing-autonomous-ai-agents-cybersecurity",
+        "published_at": "2026-07-29T10:18:54.566488",
+        "publish_date": "2026-07-29T10:18:54.566488",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/e39cb116.png",
+        "summary": "Explore the advanced architecture of self-healing autonomous AI agents for enterprise cybersecurity, focusing on proactive resilience, multi-agent orchestration, and continuous learning to ensure uninterrupted operations. Learn how platforms like CyberAgents empower this next-gen defense."
+    },
+    {
+        "id": "930adb94-430f-44ab-9d8c-f385470d0ea0",
+        "title": "Operationalizing Factual Integrity: Advanced RAG, Contextual Guardrails, and Real-Time Verification for Enterprise AI Agents",
+        "slug": "operationalizing-factual-integrity-enterprise-ai-agents",
+        "published_at": "2026-07-29T10:17:17.783339",
+        "publish_date": "2026-07-29T10:17:17.783339",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/e35861e1.png",
+        "summary": "Explore how advanced RAG, dynamic contextual guardrails, and real-time verification mechanisms are critical for deploying trustworthy, factually accurate AI agents in enterprise customer support, mitigating hallucinations and ensuring compliance. Learn CyberAgents' architectural approach."
+    },
+    {
+        "id": "b1ea029f-ac81-4949-a4bc-7e73bcf9d569",
+        "title": "Designing Zero-Trust Persistent Context for Autonomous AI Agents: Data Segmentation, Access Controls, and Encryption for Vector Stores",
+        "slug": "zero-trust-ai-agent-persistent-context-vector-stores-cyberagents",
+        "published_at": "2026-07-28T14:13:53.959474",
+        "publish_date": "2026-07-28T14:13:53.959474",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/ea31138f.png",
+        "summary": "Master the critical principles of Zero Trust for autonomous AI agent persistent context. This deep dive covers advanced data segmentation, robust access controls, and end-to-end encryption strategies for vector stores (Pinecone, Qdrant, Weaviate) to secure enterprise AI deployments with CyberAgents."
+    },
+    {
+        "id": "54350809-0a38-4ad6-b69c-efe17b6deacb",
+        "title": "Architecting Forensic Logging Frameworks for Autonomous AI Agent Post-Mortem Audits and Regulatory Scrutiny",
+        "slug": "architecting-forensic-logging-ai-agents",
+        "published_at": "2026-07-28T14:11:59.968111",
+        "publish_date": "2026-07-28T14:11:59.968111",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/3df387ce.png",
+        "summary": "Uncover the technical imperatives for forensic logging in autonomous AI agents. This deep dive explores architectural principles, components, and regulatory mandates for robust AI auditability, leveraging insights from CyberAgents, NIST, and the EU AI Act."
+    },
+    {
+        "id": "12e9dd13-a60a-4d50-a1f3-8deabce39e0b",
+        "title": "Operationalizing Advanced Red-Teaming: A Systematic Methodology for Exposing Vulnerabilities in Autonomous LLM Agents",
+        "slug": "operationalizing-advanced-red-teaming-llm-agents",
+        "published_at": "2026-07-27T18:09:18.971209",
+        "publish_date": "2026-07-27T18:09:18.971209",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/1071b725.png",
+        "summary": "Discover CyberAgents' systematic methodology for advanced red-teaming of autonomous LLM agents. Learn how to identify and mitigate critical vulnerabilities, from prompt injection to multi-agent system exploits, ensuring robust AI security for enterprise deployments."
+    },
+    {
+        "id": "7ee664e5-e7b2-4753-bea5-3d1e292e1e3e",
+        "title": "Bridging the Trust Gap: Architecting Human-in-the-Loop Frameworks for Autonomous AI Agent Incident Response",
+        "slug": "bridging-trust-gap-human-in-loop-ai-incident-response",
+        "published_at": "2026-07-26T22:05:05.540814",
+        "publish_date": "2026-07-26T22:05:05.540814",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/d5c3df55.png",
+        "summary": "Architect robust Human-in-the-Loop (HITL) frameworks for autonomous AI incident response. Explore technical architectures, mitigate AI risks, and empower human oversight with CyberAgents' pioneering platform for enterprise AI deployers and cybersecurity professionals."
+    },
+    {
+        "id": "c7abbd69-cba6-4a2e-a169-b2972eebaae4",
+        "title": "The AI Supply Chain Blind Spot: Zero-Trust Auditing for Third-Party Agent Tools and Plugins",
+        "slug": "ai-supply-chain-zero-trust-auditing-third-party-agents",
+        "published_at": "2026-07-26T22:02:10.089391",
+        "publish_date": "2026-07-26T22:02:10.089391",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/d39796b3.png",
+        "summary": "Uncover the critical vulnerabilities in AI supply chains, focusing on third-party agent tools and plugins. Learn how a Zero-Trust auditing framework, championed by CyberAgents, is essential for securing enterprise AI deployments, mitigating risks, and ensuring robust AI governance."
+    },
+    {
+        "id": "36217793-177f-4890-9f72-a4d993ff7af5",
+        "title": "Operationalizing the EU AI Act: High-Risk AI Agent Categorization and Architecting for Enterprise Compliance",
+        "slug": "eu-ai-act-high-risk-ai-agents-audit-ready-architectures",
+        "published_at": "2026-07-26T01:58:15.763166",
+        "publish_date": "2026-07-26T01:58:15.763166",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/ac945236.png",
+        "summary": "Master the EU AI Act's high-risk AI categorization for enterprise autonomous agents. Learn to build audit-ready architectures for compliance, leveraging expert insights and technical frameworks."
+    },
+    {
+        "id": "38decb21-982c-4353-ab3d-eec806b64634",
+        "title": "Operationalizing NIST AI RMF for AI Agent Swarms: Continuous Risk Observability and Adaptive Governance in Enterprise Tech Stacks",
+        "slug": "nist-ai-rmf-ai-agent-swarms-cyberagents",
+        "published_at": "2026-07-25T05:54:44.619704",
+        "publish_date": "2026-07-25T05:54:44.619704",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/95539599.png",
+        "summary": "Explore how to implement the NIST AI RMF for AI Agent Swarms within enterprise tech stacks, focusing on continuous risk observability and adaptive governance. Learn how CyberAgents facilitates robust AI cybersecurity, compliance, and ethical deployment for autonomous agents."
+    },
+    {
+        "id": "285fb9e0-b7ba-4c8c-8c5d-7e1fe3562bf1",
+        "title": "Architecting Ethical Autonomy: Embedding Principled Decision-Making and Proactive Bias Controls Directly into Enterprise AI Agent Frameworks",
+        "slug": "architecting-ethical-autonomy-enterprise-ai-agent-frameworks",
+        "published_at": "2026-07-25T05:52:43.367480",
+        "publish_date": "2026-07-25T05:52:43.367480",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/d2119a60.png",
+        "summary": "Explore how to architect ethical autonomy into enterprise AI agent frameworks, embedding principled decision-making and proactive bias controls. Learn from CyberAgents how to build responsible, compliant, and trustworthy AI systems."
+    },
+    {
+        "id": "60a80fb1-7703-48a8-a6fb-d6f1deac6a0e",
+        "title": "Securing the Swarm: Hardening Multi-Agent Cognitive Architectures Against Adversarial Manipulation",
+        "slug": "securing-multi-agent-cognitive-architectures-adversarial-manipulation",
+        "published_at": "2026-07-24T07:38:37.308666",
+        "publish_date": "2026-07-24T07:38:37.308666",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/bcb52786.png",
+        "summary": "Explore advanced strategies for hardening multi-agent cognitive architectures against sophisticated adversarial manipulation. Learn about secure-by-design principles, advanced defensive strategies, and how CyberAgents fortifies your AI ecosystem."
+    },
+    {
+        "id": "ba9d1f27-2e5a-4aae-8e87-d02ea74b9ace",
+        "title": "Beyond the Black Box: Architecting Explainable AI Agents for Auditable Financial Hyperautomation and Fraud Detection",
+        "slug": "explainable-ai-agents-financial-hyperautomation-fraud-detection",
+        "published_at": "2026-07-24T07:35:19.154974",
+        "publish_date": "2026-07-24T07:35:19.154974",
+        "thumbnail_url": "https://storage.googleapis.com/alpha-brand-app.firebasestorage.app/podcasts/thumbnails/b9599b5e.png",
+        "summary": "Explore how Explainable AI (XAI) agents are revolutionizing financial hyperautomation and fraud detection. Learn technical architectures for transparency, auditability, and compliance with CyberAgents' pioneering approach."
+    }
+]

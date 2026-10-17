@@ -25,3 +25,8 @@ build/
 .DS_Store
 Thumbs.db
 firebase-functions/node_modules/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class

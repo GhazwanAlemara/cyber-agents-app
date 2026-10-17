@@ -51,6 +51,7 @@ exports.githubWebhook = onRequest(async (req, res) => {
     
     await addDoc(collection(database, "github_events"), {
       event_type: event,
+      user_id: 'unknown',
       payload: payload,
       timestamp: serverTimestamp(),
       processed: false

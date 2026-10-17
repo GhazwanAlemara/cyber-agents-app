@@ -1,8 +1,13 @@
 import { useState, useEffect } from 'react';
+import { getAuthorForSlug } from '../data/authors';
+import type { User } from 'firebase/auth';
+import AgentSecurityWidget from './AgentSecurityWidget';
 
 interface BlogPostProps {
   slug: string;
-  onNavigate: (view: 'home' | 'docs' | 'pricing' | 'blog' | 'blog-post', slug?: string) => void;
+  onNavigate: (view: 'home' | 'docs' | 'pricing' | 'blog' | 'blog-post' | 'contact', slug?: string) => void;
+  onLogin: (intent?: string) => void;
+  user: User | null;
 }
 
 interface ArticleData {
@@ -30,7 +35,7 @@ interface ArticleIndexEntry {
   thumbnail_url?: string;
 }
 
-export default function BlogPost({ slug, onNavigate }: BlogPostProps) {
+export default function BlogPost({ slug, onNavigate, onLogin, user }: BlogPostProps) {
   const [article, setArticle] = useState<ArticleData | null>(null);
   const [relatedArticles, setRelatedArticles] = useState<ArticleIndexEntry[]>([]);
   const [loading, setLoading] = useState(true);
@@ -97,9 +102,35 @@ export default function BlogPost({ slug, onNavigate }: BlogPostProps) {
   const rawDate = article.published_at || article.publish_date || article.date;
   const formattedDate = rawDate ? new Date(rawDate).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' }) : '';
   const description = article.meta_description || article.description || '';
+  const author = getAuthorForSlug(slug);
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": article.title,
+    "datePublished": rawDate || new Date().toISOString(),
+    "dateModified": rawDate || new Date().toISOString(),
+    "author": {
+      "@type": "Person",
+      "name": author.name,
+      "jobTitle": author.role,
+      "description": author.bio,
+      "knowsAbout": author.credentials
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CyberAgents",
+      "url": "https://cyberagents.app"
+    },
+    "description": description
+  };
 
   return (
     <article className="blog-post-container">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="blog-post-header">
         <button className="back-btn" onClick={() => {
           window.history.pushState({}, '', '/blog');
@@ -116,12 +147,77 @@ export default function BlogPost({ slug, onNavigate }: BlogPostProps) {
         </div>
         <h1>{article.title}</h1>
         {description && <p className="article-description">{description}</p>}
+
+        {/* Author Header Bar */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', margin: '1.25rem 0 1rem 0', padding: '0.75rem 0', borderTop: '1px solid rgba(255,255,255,0.08)', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+          <img src={author.avatar} alt={author.name} style={{ width: '42px', height: '42px', borderRadius: '50%', objectFit: 'cover', border: '1px solid rgba(56,189,248,0.3)' }} />
+          <div>
+            <div style={{ fontWeight: 600, color: 'var(--text-main, #f8fafc)', fontSize: '0.95rem' }}>{author.name}</div>
+            <div style={{ color: 'var(--text-muted, #94a3b8)', fontSize: '0.8rem' }}>{author.role}</div>
+          </div>
+        </div>
       </div>
       
-      <div 
-        className="article-content"
-        dangerouslySetInnerHTML={{ __html: article.html_content }}
-      />
+      {(() => {
+        const paragraphs = (article.html_content || '').split('</p>');
+        const midPoint = Math.max(1, Math.floor(paragraphs.length * 0.3));
+        const firstPart = paragraphs.slice(0, midPoint).join('</p>') + (midPoint > 0 && paragraphs.length > 1 ? '</p>' : '');
+        const secondPart = paragraphs.slice(midPoint).join('</p>');
+
+        return (
+          <>
+            <div 
+              className="article-content"
+              dangerouslySetInnerHTML={{ __html: firstPart }}
+            />
+
+            <AgentSecurityWidget 
+              articleTitle={article.title}
+              articleSlug={slug}
+              onLogin={onLogin}
+              onNavigate={onNavigate}
+              user={user}
+            />
+
+            {secondPart && (
+              <div 
+                className="article-content"
+                dangerouslySetInnerHTML={{ __html: secondPart }}
+              />
+            )}
+
+            {/* In-Article High-Intent Conversion Banner */}
+            <div className="article-conversion-banner">
+              <div className="conversion-banner-content">
+                <span className="banner-badge">ENTERPRISE AGENT GUARDRAILS • THE SUPERNOVA SHIELD</span>
+                <h3>Automate Prompt Injection & MCP Security Across Your Fleet</h3>
+                <p>
+                  Deploy real-time guardrails for LangChain, CrewAI, AutoGen, and custom Python/Node agents with 2 lines of code. The native security shield for the Supernova agent ecosystem.
+                </p>
+                <div className="banner-actions">
+                  <button className="btn-primary" onClick={() => onLogin('blog-banner')}>
+                    Start Free (1,000 API requests/mo)
+                  </button>
+                  <button className="btn-secondary" onClick={() => onNavigate('docs')}>
+                    Read Developer Docs →
+                  </button>
+                </div>
+              </div>
+            </div>
+          </>
+        );
+      })()}
+
+      {/* Author Bio Box */}
+      <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '12px', padding: '1.5rem', margin: '3rem 0 2rem 0', display: 'flex', gap: '1.25rem', alignItems: 'flex-start' }}>
+        <img src={author.avatar} alt={author.name} style={{ width: '64px', height: '64px', borderRadius: '50%', objectFit: 'cover', border: '2px solid #38bdf8', flexShrink: 0 }} />
+        <div>
+          <span style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#38bdf8' }}>Security Research Author</span>
+          <h4 style={{ margin: '0.25rem 0', fontSize: '1.15rem', color: '#f8fafc' }}>{author.name}</h4>
+          <div style={{ fontSize: '0.8rem', color: '#94a3b8', marginBottom: '0.75rem' }}>{author.role} • {author.credentials}</div>
+          <p style={{ margin: 0, fontSize: '0.9rem', color: '#cbd5e1', lineHeight: 1.6 }}>{author.bio}</p>
+        </div>
+      </div>
 
       {relatedArticles.length > 0 && (
         <div className="related-articles-section">

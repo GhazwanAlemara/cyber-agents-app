@@ -6,3 +6,4 @@ firebase-admin
 google-genai
 google-cloud-firestore
 google-cloud-secret-manager
+httpx

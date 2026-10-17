@@ -13,6 +13,7 @@ interface Activity {
   title: string;
   description: string;
   status: 'safe' | 'attack';
+  severity?: string;
   timestamp: Date;
 }
 
@@ -34,6 +35,8 @@ function Dashboard({ user }: DashboardProps) {
     let unsubscribeIntel = () => {};
     let unsubscribeEvents = () => {};
     let unsubscribeUser = () => {};
+    let unsubscribeMcp = () => {};
+    let unsubscribeA2a = () => {};
 
     const loadData = async () => {
       try {
@@ -65,6 +68,7 @@ function Dashboard({ user }: DashboardProps) {
                 title: 'Prompt Injection Blocked',
                 description: `Agent: ${data.agent_id || 'Unknown'} • Source: Global Intel Network`,
                 status: 'attack',
+                severity: data.severity || 'Medium',
                 timestamp: data.timestamp?.toDate() || new Date()
               };
             });
@@ -83,7 +87,7 @@ function Dashboard({ user }: DashboardProps) {
 
         // 2. Listen to github events
         const eventsRef = collection(db, "github_events");
-        const qEvents = query(eventsRef, orderBy("timestamp", "desc"), limit(10));
+        const qEvents = query(eventsRef, where("user_id", "==", user.uid), orderBy("timestamp", "desc"), limit(10));
         
         unsubscribeEvents = onSnapshot(qEvents, 
           (snapshot: QuerySnapshot<DocumentData>) => {
@@ -115,6 +119,50 @@ function Dashboard({ user }: DashboardProps) {
           }
         );
 
+        // 3. Listen to MCP Telemetry
+        const mcpRef = collection(db, "mcp_telemetry");
+        const qMcp = query(mcpRef, where("user_id", "==", user.uid), orderBy("timestamp", "desc"), limit(10));
+        unsubscribeMcp = onSnapshot(qMcp, (snapshot) => {
+          const mcpActivities: Activity[] = snapshot.docs.map(doc => {
+            const data = doc.data();
+            return {
+              id: doc.id,
+              type: 'mcp',
+              title: 'MCP Tool Validation',
+              description: `Agent: ${data.agent_id} • Tool: ${data.tool_name} • Reason: ${data.reason}`,
+              status: data.is_safe ? 'safe' : 'attack',
+              severity: data.severity || 'None',
+              timestamp: data.timestamp?.toDate() || new Date()
+            };
+          });
+          setActivities(prev => {
+            const filtered = prev.filter(a => a.type !== 'mcp');
+            return [...mcpActivities, ...filtered].sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime()).slice(0, 10);
+          });
+        });
+
+        // 4. Listen to A2A Telemetry
+        const a2aRef = collection(db, "a2a_telemetry");
+        const qA2a = query(a2aRef, where("user_id", "==", user.uid), orderBy("timestamp", "desc"), limit(10));
+        unsubscribeA2a = onSnapshot(qA2a, (snapshot) => {
+          const a2aActivities: Activity[] = snapshot.docs.map(doc => {
+            const data = doc.data();
+            return {
+              id: doc.id,
+              type: 'a2a',
+              title: 'A2A Trust Score Evaluated',
+              description: `Caller: ${data.caller_agent_id} • Target: ${data.target_agent_id} • Score: ${data.score?.toFixed(2)}`,
+              status: data.score > 0.6 ? 'safe' : 'attack',
+              severity: data.severity || 'None',
+              timestamp: data.timestamp?.toDate() || new Date()
+            };
+          });
+          setActivities(prev => {
+            const filtered = prev.filter(a => a.type !== 'a2a');
+            return [...a2aActivities, ...filtered].sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime()).slice(0, 10);
+          });
+        });
+
       } catch (error: any) {
         console.error("Critical Data Load error:", error);
         setLoading(false);
@@ -126,6 +174,8 @@ function Dashboard({ user }: DashboardProps) {
       unsubscribeIntel();
       unsubscribeEvents();
       unsubscribeUser();
+      unsubscribeMcp();
+      unsubscribeA2a();
     };
   }, [user.uid]);
 
@@ -175,7 +225,19 @@ function Dashboard({ user }: DashboardProps) {
                   <h4>{activity.title}</h4>
                   <p>{activity.description}</p>
                 </div>
-                <div>
+                <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                  {activity.severity && activity.severity !== 'None' && (
+                    <span className="badge" style={{ 
+                      backgroundColor: activity.severity === 'Critical' ? 'rgba(239, 68, 68, 0.4)' : 
+                                       activity.severity === 'High' ? 'rgba(249, 115, 22, 0.4)' :
+                                       activity.severity === 'Medium' ? 'rgba(234, 179, 8, 0.4)' : 'rgba(59, 130, 246, 0.4)',
+                      color: activity.severity === 'Critical' ? '#fca5a5' : 
+                             activity.severity === 'High' ? '#fdba74' :
+                             activity.severity === 'Medium' ? '#fde047' : '#93c5fd'
+                    }}>
+                      {activity.severity.toUpperCase()}
+                    </span>
+                  )}
                   <span className={`badge ${activity.status}`}>
                     {activity.status === 'attack' ? 'BLOCKED' : 'SAFE'}
                   </span>
